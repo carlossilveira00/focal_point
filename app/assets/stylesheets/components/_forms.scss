@@ -1,0 +1,106 @@
+.login-card {
+  width: 400px;
+  margin: 0 auto;
+  padding: 25px 30px;
+  border-radius: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.edit-card {
+  width: 700px;
+  margin: 0 auto;
+  padding: 25px 30px;
+  border-radius: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+ }
+
+ .btn-log-in {
+  background-color: #ff333a;
+  color: white;
+  border-radius: 30px;
+  padding: 5px 15px;
+  border: 0px;
+  width: 300px;
+  font-size: large;
+  font-weight: 500;
+  margin-bottom: 15px;
+  align-self: center;
+  text-decoration: none;
+}
+
+.btn-edit {
+  background-color: #ff333a;
+  color: white;
+  border-radius: 30px;
+  padding: 5px 25px;
+  border: 0px;
+  width: 220px;
+  font-size: large;
+  font-weight: 500;
+  margin-top: 25px;
+  text-decoration: none;
+  margin-left: 40px;
+}
+
+.btn-log-in-other {
+  background-color: white;
+  border-radius: 20px;
+  border-style: groove;
+  color:black;
+  border-color: rgb(237, 237, 237);
+  padding: 5px 15px;
+  width: 300px;
+  margin-top: 7px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-log-in-google {
+  background-color: white;
+  background: asset-url("google_icon.png") no-repeat left;
+  background-position: 12px 8px;
+  border-radius: 20px;
+  border-color: rgb(237, 237, 237);
+  border-style: groove;
+  background-size: 17px;
+  padding: 5px 15px;
+  width: 300px;
+  margin-top: 7px;
+  text-align: center;
+}
+
+.btn-log-in-facebook {
+  background-color: white;
+  background: asset-url("facebook_icon.png") no-repeat left;
+  background-position: 12px 8px;
+  border-radius: 20px;
+  border-color: rgb(237, 237, 237);
+  border-style: groove;
+  background-size: 17px;
+  padding: 5px 15px;
+  width: 300px;
+  margin-top: 7px;
+  text-align: center;
+}
+
+.btn-log-in-other:hover {
+  color: black;
+}
+.btn-edit:hover {
+  background-color: #FF5A60;
+  color: white;
+  transition: 0.15s;
+}
+
+.btn-log-in:hover {
+  background-color: #FF5A60;
+  color: white;
+  transition: 0.15s;
+}
+
+.password-new {
+  text-decoration: none;
+  text-align: center;
+  margin-top: 10px;
+  display: grid;
+}

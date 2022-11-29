@@ -1,0 +1,28 @@
+<div class="edit-card my-4">
+  <h2 class='text-center'>New Project</h2>
+
+  <%= simple_form_for @project do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <div class="field">
+        <%= f.input :name,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "name" }%>
+        <%= f.input :description,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "description" }%>
+        <%= f.input :photos,
+                    required: false,
+                    autofocus: true,
+                    as: :file, input_html: { multiple: true } %>
+        <p><small>Max of 10M</small><p>
+      </div>
+    </div>
+    <div class="form-actions text-center">
+      <input class="btn-log-in" type="submit" value="Create Project">
+    </div>
+  <% end %>
+</div>

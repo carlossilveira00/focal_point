@@ -13,7 +13,7 @@ export default class extends Controller {
       group: 'shared', // set both lists to same group
       animation: 150,
       onAdd: function (event) {
-        const url = event.item.id
+        const url = event.item.children[0].id
 
         fetch(url, {
           method: "PATCH",
@@ -34,8 +34,7 @@ export default class extends Controller {
       group: 'shared', // set both lists to same group
       animation: 150,
       onAdd: function (event) {
-        const url = event.item.id
-
+        const url = event.item.children[0].id
         fetch(url, {
           method: "PATCH",
           credentials: "same-origin",
@@ -47,7 +46,6 @@ export default class extends Controller {
             { status: "Unassigned"
           })
         })
-
       }
     });
 
@@ -55,7 +53,7 @@ export default class extends Controller {
       group: 'shared', // set both lists to same group
       animation: 150,
       onAdd: function (event) {
-        const url = event.item.id
+        const url = event.item.children[0].id
 
         fetch(url, {
           method: "PATCH",
@@ -68,7 +66,6 @@ export default class extends Controller {
             { status: "To-Do"
           })
         })
-
       }
     });
 
@@ -76,7 +73,7 @@ export default class extends Controller {
       group: 'shared',
       animation: 150,
       onAdd: function (event) {
-        const url = event.item.id
+        const url = event.item.children[0].id
 
         fetch(url, {
           method: "PATCH",
@@ -89,7 +86,6 @@ export default class extends Controller {
             { status: "In progress"
           })
         })
-
       }
     });
 
@@ -97,7 +93,7 @@ export default class extends Controller {
       group: 'shared',
       animation: 150,
       onAdd: function (event) {
-        const url = event.item.id
+        const url = event.item.children[0].id
 
         fetch(url, {
           method: "PATCH",
@@ -110,8 +106,8 @@ export default class extends Controller {
             { status: "Completed"
           })
         })
-
       }
     });
-  }
+
+  };
 }

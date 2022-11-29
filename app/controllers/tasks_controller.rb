@@ -13,6 +13,12 @@ class TasksController < ApplicationController
     end
   end
 
+  def destroy
+    @task = Task.find(params[:project_id])
+    @task.destroy
+    redirect_to projects_path(params[:id])
+  end
+
   private
 
   def task_params

@@ -1,65 +1,77 @@
-<div class="banner" style="background-color:#FFDDDE;">
-  <div class="d-flex" style="margin-left:50px;" style="margin-right:50px;">
-    <div class="container">
-      <h1>Make your life <strong>easier</strong>!</h1>
-      <p>All-in-one app at the distance of a finger.</p>
-      <input class="form-control me-2" type="search" placeholder="Email Address" aria-label="Search" style="height: 50px; width: 250px;">
-      <a class="btn btn btn-dark" style="border-radius:10px;" href="#">Get Started</a>
-    </div>
-    <div class="img-banner d-flex" style="margin-right:50px;">
-      <img src="https://images.unsplash.com/photo-1669579532781-aa18bce76c3d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" class="min-img mx-3" alt="...">
-      <img src="https://images.unsplash.com/photo-1664575196412-ed801e8333a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80" class="max-img mx-3" alt="...">
-      <img src="https://images.unsplash.com/photo-1669542832243-68a0634d9117?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" class="min-img mx-3" alt="...">
+<div class="home-div">
+  <div class="banner" style="background-color:#FFDDDE;">
+    <div class="d-flex" style="margin-left:50px;" style="margin-right:50px;">
+      <div class="container">
+        <h1>Make your life <strong>easier</strong>!</h1>
+        <p>All-in-one app at the distance of a finger.</p>
+        <input class="form-control me-2" type="search" placeholder="Email Address" aria-label="Search" style="height: 50px; width: 280px; border-radius:10px;">
+        <a class="btn btn btn-dark" style="border-radius:10px;" href="#">Get Started</a>
+      </div>
+      <div class="img-banner d-flex" style="margin-right:50px;">
+        <img src="https://images.unsplash.com/photo-1669579532781-aa18bce76c3d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" class="min-img mx-3" alt="...">
+        <img src="https://images.unsplash.com/photo-1664575196412-ed801e8333a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80" class="max-img mx-3" alt="...">
+        <img src="https://images.unsplash.com/photo-1669542832243-68a0634d9117?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" class="min-img mx-3" alt="...">
+      </div>
     </div>
   </div>
-</div>
 
-<div class="explanation">
-  <div style="d-flex justify-content-between">
-    <img src="" class="min-img mx-3" alt="...">
-    <h2>Ticket System</h2>
-    <p>Create and view tickets for your project so you can put things on the table and discuss it with your team.</p>
+  <div class="explanation text-center my-5">
+    <div class="d-flex justify-content-between my-5">
+      <%= image_tag 'undraw_Process.png', class:'img-explanation' %>
+      <div class= "info">
+        <h2>Ticket System</h2>
+        <p>Create and view tickets for your project so you can put things on the table and discuss it with your team.</p>
+      </div>
+    </div>
+    <div class="d-flex justify-content-between my-5">
+      <div class= "info">
+        <h2>Inbuilt Chat</h2>
+        <p>Chat with your team and share ideas without having to leave the app.</p>
+      </div>
+      <%= image_tag 'undraw_Chat.png', class:'img-explanation'%>
+    </div>
+    <div class="d-flex justify-content-between my-5">
+      <%= image_tag 'undraw_Add_tasks.png', class:'img-explanation' %>
+      <div class= "info">
+        <h2>Task Board</h2>
+        <p>Manage all the task for you and your team in one place. Be able to organize and assign your team in one place.</p>
+      </div>
+    </div>
+    <div>
+      <div class="d-flex justify-content-between my-5">
+        <div class= "info">
+          <h2>Performance Analysis</h2>
+          <p>Analyze your teams and your performace across the project.</p>
+        </div>
+        <%= image_tag 'undraw_Segment.png', class:'img-explanation' %>
+      </div>
+    </div>
   </div>
-  <div style="d-flex justify-content-between">
-    <h2>Inbuilt Chat</h2>
-    <p>Chat with your team and share ideas without having to leave the app.</p>
-    <img src="" class="min-img mx-3" alt="...">
-  </div>
-  <div style="d-flex justify-content-between">
-    <img src="" class="min-img mx-3" alt="...">
-    <h2>Task Board</h2>
-    <p>Manage all the task for you and your team in one place. Be able to organize and assign your team in one place.</p>
-  </div>
-  <div>
-    <h2>Performance Analysis</h2>
-    <p>Analyze your teams and your performace across the project.</p>
-    <img src="" class="min-img mx-3" alt="...">
-  </div>
-</div>
 
-<div class="comments" style="background:#FFDDDE;">
-    <div class="list d-flex justify-content-center align-items-center pt-5">
-      <h2>See what our users have to say</h2>
+  <div class="comments-space" style="background:#FFDDDE;">
+      <div class="list text-center">
+        <h2>See what our users have to say</h2>
       </div>
-<div class="comment">
-  <div class="list d-flex justify-content-center align-items-center mx-3">
-    <div class="card-home p-3" style="width: 18rem; background-color:white; border-radius:10px;">
-      <div class="card-body">
-        <h5 class="card-title">Carlos Silveira</h5>
-        <p class="card-text"><i>““This app made my life so much easier, I now can chat with my teamin one app!””</i></p>
+      <div class="comments">
+        <div class="list-comments d-flex justify-content-between align-items-center mx-3">
+          <div class="card-home p-3">
+            <div class="card-body">
+              <h5 class="card-title">Carlos Silveira</h5>
+              <p class="card-text"><i>“This app made my life so much easier, I now can chat with my teamin one app!””</i></p>
+            </div>
+          </div>
+          <div class="card-home p-3">
+            <div class="card-body">
+              <h5 class="card-title">Guilherme Frazão</h5>
+              <p class="card-text"><i>“I can organize and assign tasks to my team, this app just made my productivity go through the moon!”</i></p>
+            </div>
+          </div>
+          <div class="card-home p-3">
+            <div class="card-body">
+              <h5 class="card-title">Gabriel Curvelo</h5>
+              <p class="card-text"><i>“The best feature of all is that I can analyse the productivity of my team and asset what I need to change.”</i></p>
+            </div>
+          </div>
       </div>
-    </div>
-    <div class="card-home p-3" style="width: 18rem; background-color:white; border-radius:10px;">
-      <div class="card-body">
-        <h5 class="card-title">Guilherme Frazão</h5>
-        <p class="card-text"><i>“I can organize and assign tasks to my team, this app just made my productivity go through the moon!”</i></p>
-      </div>
-    </div>
-    <div class="card-home p-3" style="width: 18rem; background-color:white; border-radius:10px;">
-      <div class="card-body">
-        <h5 class="card-title">Gabriel Curvelo</h5>
-        <p class="card-text"><i>“The best feature of all is that I can analyse the productivity of my team and asset what I need to change.”</i></p>
-      </div>
-    </div>
- </div>
+  </div>
 </div>

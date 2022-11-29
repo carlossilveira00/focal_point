@@ -1,8 +1,19 @@
 // Specific CSS for your home-page
 
+.home-div{
+  background-color: white;
+}
+
 .banner {
   padding-top: 30px;
   padding-bottom: 30px;
+
+  .container {
+    padding-top: 40px;
+    p {
+      font-size: 18px;
+    }
+  }
 
   .form-control {
     margin-top: 10px;
@@ -14,12 +25,62 @@
     border-radius: 15px;
 
     .max-img{
-      height: 250px;
-      width: 200px;
+      height: 300px;
+      width: 250px;
+      border-radius: 10px;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     }
     .min-img{
-      height: 200px;
-      width: 150px;
+      height: 280px;
+      width: 220px;
+      border-radius: 10px;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     }
   }
+}
+
+.explanation {
+  margin-left: 320px;
+  margin-right: 320px;
+
+
+  .img-explanation {
+    height: 270px;
+    width: 300px;
+    border-radius: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+  .info {
+    width: 350px;
+    margin-top: 67px;
+    p{
+      font-size: 18px;
+    }
+  }
+}
+
+.comments-space {
+  padding: 60px;
+
+  .list {
+    padding-bottom: 15px;
+  }
+  .list-comments {
+    .comments {
+      margin-top: 15px;
+      margin-bottom: 30px;
+    }
+      .card-home{
+        height: 155px;
+        width: 18rem;
+        background-color:white;
+        border-radius:10px;
+        margin-left: 20px;
+        margin-right: 20px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        .card-title {
+          padding-bottom: 7px;
+        }
+      }
+    }
 }

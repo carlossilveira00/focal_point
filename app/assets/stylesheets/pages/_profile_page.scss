@@ -7,6 +7,7 @@
 .profile-card {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 15px;
+  text-align: center;
   padding: 20px;
   height: min-content;
 
@@ -14,6 +15,7 @@
     height: min-content;
     width: 120px;
     p{
+      height: min-content;
       width: 300px;
     }
   }
@@ -34,8 +36,7 @@
       background: #FFDDDE;
       width: 150px;
       align-content: center;
-      margin-left: 75px;
-      border-radius: 10px;
+      border-radius: 30px;
       box-shadow: rgba(127, 127, 127, 0.2) 1px 5px 10px 1px;
     }
   }

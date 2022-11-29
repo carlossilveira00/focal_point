@@ -1,0 +1,28 @@
+<div class="modal fade" id="task<%=task.id%>Modal" tabindex="-1" aria-labelledby="task<%=task.id%>ModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="task<%=task.id%>ModalLabel"><%=task.title%></h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Description:</strong><%=task.description%></p>
+        <div style="display:flex;align-items:center">
+          <strong>Priority:</strong>
+            <% task.priority.times do %>
+              <i class="fa-solid fa-fire-flame-simple" style="color:#FF333A;"></i>
+            <%end%>
+        </div>
+        <div style="display:flex;align-items:center;">
+          <h6 style="margin-right:20px;margin-bottom:0px;"><strong style="margin-right:10px;">Assigned to:</strong> <%= User.find(task.user_id).first_name%> <%= User.find(task.user_id).last_name%></h6>
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <%= link_to project_task_path(task.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+          <i class="fa-solid fa-trash" style="color:#FF5A60;"></i>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>

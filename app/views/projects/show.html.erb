@@ -1,3 +1,5 @@
+<%= render "shared/sidebar" %>
+
 <!-- Div for the product description and carousel with project pictures. -->
 
 <div class="product-banner">
@@ -37,7 +39,8 @@
     <div id="nextmeeting" data-sortable-target="nextmeeting" >
       <% @tasks.each do |task|%>
         <% if task.status == "Next Meeting"%>
-          <%= render "projects/shared/task", task: task %>
+          <a id="link" data-bs-toggle="modal" data-bs-target="#task<%=task.id%>Modal"><%= render "projects/shared/task", task: task %></a>
+          <%= render "projects/shared/task_modal", task: task %>
         <% end %>
       <% end %>
     </div>
@@ -48,7 +51,8 @@
     <div id="unassigned" data-sortable-target="unassigned" >
       <% @tasks.each do |task|%>
         <% if task.status == "Unassigned"%>
-          <%= render "projects/shared/task", task: task %>
+          <a id="link" data-bs-toggle="modal" data-bs-target="#task<%=task.id%>Modal"><%= render "projects/shared/task", task: task %></a>
+          <%= render "projects/shared/task_modal", task: task %>
         <% end %>
       <% end %>
     </div>
@@ -59,7 +63,8 @@
     <div id="todo" data-sortable-target="todo" >
       <% @tasks.each do |task|%>
         <% if task.status == "To-Do"%>
-          <%= render "projects/shared/task", task: task %>
+          <a id="link" data-bs-toggle="modal" data-bs-target="#task<%=task.id%>Modal"><%= render "projects/shared/task", task: task %></a>
+          <%= render "projects/shared/task_modal", task: task %>
         <% end %>
       <% end %>
     </div>
@@ -70,7 +75,8 @@
     <div id="inprogress" data-sortable-target="inprogress">
       <% @tasks.each do |task|%>
         <% if task.status == "In progress"%>
-          <%= render "projects/shared/task", task: task %>
+          <a id="link" data-bs-toggle="modal" data-bs-target="#task<%=task.id%>Modal"><%= render "projects/shared/task", task: task %></a>
+          <%= render "projects/shared/task_modal", task: task %>
         <% end %>
       <% end %>
     </div>
@@ -81,7 +87,8 @@
     <div id="completed" data-sortable-target="completed">
       <% @tasks.each do |task|%>
         <% if task.status == "Completed"%>
-          <%= render "projects/shared/task", task: task %>
+          <a id="link" data-bs-toggle="modal" data-bs-target="#task<%=task.id%>Modal"><%= render "projects/shared/task", task: task %></a>
+          <%= render "projects/shared/task_modal", task: task %>
         <% end %>
       <% end %>
     </div>
@@ -111,4 +118,22 @@
   </div>
 </div>
   <!-- MODAL FORM  -->
+</div>
+
+<div class="modal fade" id="task1Modal" tabindex="-1" aria-labelledby="task1ModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="task1ModalLabel">Task 1</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h1>Information about the task</h1>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
 </div>

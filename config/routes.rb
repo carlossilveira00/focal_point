@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   get "profile", to: "user_projects#index"
+  get "ticket", to: "pages#ticket"
   resources :projects, except: [:index] do
     post "/projects/:project_id/tasks", to: "tasks#create" , as: :task_create
     resources :tasks

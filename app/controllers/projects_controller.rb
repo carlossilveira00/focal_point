@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
-    @tasks = Task.all
+    @tasks = Task.where("project_id = ?", @project.id)
     @new_task = Task.new
   end
 

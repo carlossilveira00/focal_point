@@ -1,0 +1,108 @@
+<div class="text-center tasks-show">
+  <h1>My Tasks</h1>
+  <div class="board" data-controller="sortable modal">
+    <div class="kanban-block d-none text-center">
+      <strong>Next Meeting</strong>
+      <div id="nextmeeting" data-sortable-target="nextmeeting" >
+        <% @tasks.each do |task|%>
+          <% if task.status == "Next Meeting"%>
+            <a id="link" data-bs-toggle="modal" data-bs-target="#task<%=task.id%>Modal"><%= render "projects/shared/task", task: task %></a>
+            <%= render "projects/shared/task_modal", task: task %>
+          <% end %>
+        <% end %>
+      </div>
+      <button type="button" class="btn btn-secondary add-task" data-bs-toggle="modal" data-bs-target="#formModal" data-bs-whatever="@mdo"><i class="fa-solid fa-plus"></i></button>
+    </div>
+    <div class="kanban-block d-none text-center" >
+      <strong>Unassigned</strong>
+      <div id="unassigned" data-sortable-target="unassigned" >
+        <% @tasks.each do |task|%>
+          <% if task.status == "Unassigned"%>
+            <a id="link" data-bs-toggle="modal" data-bs-target="#task<%=task.id%>Modal"><%= render "projects/shared/task", task: task %></a>
+            <%= render "projects/shared/task_modal", task: task %>
+          <% end %>
+        <% end %>
+      </div>
+      <button type="button" class="btn btn-secondary add-task" data-bs-toggle="modal" data-bs-target="#formModal" data-bs-whatever="@mdo"><i class="fa-solid fa-plus"></i></button>
+    </div>
+    <div class="kanban-block text-center" >
+      <strong>To-Do</strong>
+      <div id="todo" data-sortable-target="todo" >
+        <% @tasks.each do |task|%>
+          <% if task.status == "To-Do"%>
+            <a id="link" data-bs-toggle="modal" data-bs-target="#task<%=task.id%>Modal"><%= render "projects/shared/task", task: task %></a>
+            <%= render "projects/shared/task_modal", task: task %>
+          <% end %>
+        <% end %>
+      </div>
+      <button type="button" class="btn btn-secondary add-task" data-bs-toggle="modal" data-bs-target="#formModal" data-bs-whatever="@mdo"><i class="fa-solid fa-plus"></i></button>
+    </div>
+    <div class="kanban-block text-center" >
+      <strong>In Progress</strong>
+      <div id="inprogress" data-sortable-target="inprogress">
+        <% @tasks.each do |task|%>
+          <% if task.status == "In progress"%>
+            <a id="link" data-bs-toggle="modal" data-bs-target="#task<%=task.id%>Modal"><%= render "projects/shared/task", task: task %></a>
+            <%= render "projects/shared/task_modal", task: task %>
+          <% end %>
+        <% end %>
+      </div>
+      <button type="button" class="btn btn-secondary add-task" data-bs-toggle="modal" data-bs-target="#formModal" data-bs-whatever="@mdo"><i class="fa-solid fa-plus"></i></button>
+    </div>
+    <div class="kanban-block text-center" >
+      <strong>Completed</strong>
+      <div id="completed" data-sortable-target="completed">
+        <% @tasks.each do |task|%>
+          <% if task.status == "Completed"%>
+            <a id="link" data-bs-toggle="modal" data-bs-target="#task<%=task.id%>Modal"><%= render "projects/shared/task", task: task %></a>
+            <%= render "projects/shared/task_modal", task: task %>
+          <% end %>
+        <% end %>
+      </div>
+      <button type="button" class="btn btn-secondary add-task" data-bs-toggle="modal" data-bs-target="#formModal"><i class="fa-solid fa-plus"></i></button>
+    </div>
+  </div>
+  <!-- MODAL FORM  -->
+  <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="formModalLabel">New Task</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <%= simple_form_for [@project,@new_task] do |f| %>
+            <%= f.input :title %>
+            <%= f.input :description, :as => :text, :input_html => { 'rows' => 5, 'cols' => 10 } %>
+            <%= f.input :priority, as: :numeric %>
+            <%= f.input :status, collection: ["To-Do", "Unassigned", "Completed", "In progress", "Next Meeting" ] %>
+            <%= f.input :project_id, :as => :hidden, :input_html => { :value => @project.id }%>
+            <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id }%>
+            <%= button_to "Create Task", project_task_create_path(@project)%>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL FORM  -->
+
+  <!-- MODAL TASK  -->
+  <div class="modal fade" id="task1Modal" tabindex="-1" aria-labelledby="task1ModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="task1ModalLabel">Task 1</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h1>Information about the task</h1>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Send message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL TASK  -->
+</div>

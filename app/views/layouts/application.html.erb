@@ -10,13 +10,16 @@
   </head>
 
   <body>
-    <div>
       <%= render "shared/flashes" %>
-      <% unless controller_name=="pages" && action_name=="home"%>
-      <%= render "shared/sidebar" %>
+      <% if controller_name=="pages" && action_name=="home"%>
+      <%= render "shared/navbar" %>
       <% end %>
-      <%= yield %>
-      <%= render "shared/footer" %>
+      <div class="page-container d-flex">
+        <% unless controller_name=="pages" && action_name=="home"%>
+        <%= render "shared/sidebar" %>
+        <% end %>
+        <%= yield %>
     </div>
+      <%= render "shared/footer" %>
   </body>
 </html>

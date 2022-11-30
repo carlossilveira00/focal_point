@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get "profile", to: "user_projects#index"
   get "ticket", to: "pages#ticket_show"
+  get "tickets", to: "pages#ticket"
   resources :projects, except: [:index] do
-    post "/projects/:project_id/tasks", to: "tasks#create" , as: :task_create
+    post "/projects/:project_id/tasks", to: "tasks#create", as: :task_create
     resources :tasks
     member do
       patch "/tasks/:task_id/set_status", to: "tasks#set_status", as: :set_task_status

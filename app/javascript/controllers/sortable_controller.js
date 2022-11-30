@@ -7,6 +7,7 @@ export default class extends Controller {
   static targets = [ "nextmeeting", "unassigned" ,"todo", "inprogress", "completed", "task"]
 
   connect() {
+    console.log(this.todoTarget)
     const csrfToken = document.querySelector("meta[name=csrf-token]").getAttribute("content")
 
     new Sortable(this.nextmeetingTarget, {

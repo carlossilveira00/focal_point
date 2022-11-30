@@ -1,5 +1,11 @@
 class TasksController < ApplicationController
 
+  def index
+    @project = Project.find(params[:project_id])
+    @tasks = Task.where("project_id = ? AND user_id = ?", @project.id, current_user.id)
+    @new_task = Task.new
+  end
+
   def set_status
     @task = Task.find(params[:task_id])
     @task.update(task_params)

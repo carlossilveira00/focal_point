@@ -24,14 +24,18 @@
       <p class="3" style="margin-right:15px;">Status</p>
     </div>
     <div class="info-row">
-        <% 10.times do |item|%>
-        <div class="btn-table table-info d-flex justify-content-between text-center my-5" type="button" href="/projects/:id">
-          <img class="avatar" style="margin-top:-8px; margin-bottom:8px;" src="http://res.cloudinary.com/djn023to9/image/upload/c_fill/v1/production/uksu8qrxln8cetj78lk72pglrsz3">
-          <p style="width:120px;">Project's Name</p>
-          <p style="width:120px;">Your Role</p>
-          <p style="width:120px;">Status</p>
-        </div>
+        <!-- Div for project information. -->
+        <% @projects.each do |project|%>
+        <a href="/projects/<%= project.id%>" style="text-decoration:none;">
+          <div class="btn-table table-info d-flex justify-content-between text-center my-5" >
+            <img class="avatar" style="margin-top:-8px; margin-bottom:8px;" src="http://res.cloudinary.com/djn023to9/image/upload/c_fill/v1/production/uksu8qrxln8cetj78lk72pglrsz3">
+            <p style="width:120px;"><%= project.name%></p>
+            <p style="width:120px;">Manager</p>
+            <p style="width:120px;">On Going</p>
+          </div>
+        </a>
         <% end %>
+        <!-- Div for project information. -->
     </div>
   </div>
 </div>

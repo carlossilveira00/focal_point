@@ -1,4 +1,4 @@
-<div class="task" id="<%= set_task_status_project_url(task_id: task.id) %>" >
+<div class="task" id="<%= set_task_status_project_url(task_id: task.id, id: @project.id) %>" >
   <em style="margin:0;"><%= task.title%></em>
   <div style="display:flex;margin: 0 20px;">
     <% task.priority.times do %>

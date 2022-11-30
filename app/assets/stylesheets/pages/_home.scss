@@ -5,38 +5,36 @@
 }
 
 .banner {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 
-  .container {
+  .info-details {
     padding-top: 40px;
-    p {
-      font-size: 18px;
-    }
-  }
+    width: 60%;
+      }
 
-  .form-control {
-    margin-top: 10px;
-    margin-bottom: 20px;
-  }
+      .form-control {
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
 
-  .img-banner {
-    align-items: center;
-    border-radius: 15px;
+      .img-banner {
+        align-items: center;
+        border-radius: 15px;
 
-    .max-img{
-      height: 300px;
-      width: 250px;
-      border-radius: 10px;
-      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    }
-    .min-img{
-      height: 280px;
-      width: 220px;
-      border-radius: 10px;
-      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    }
-  }
+        .max-img{
+          height: 300px;
+          width: 250px;
+          border-radius: 10px;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        .min-img{
+          height: 280px;
+          width: 220px;
+          border-radius: 10px;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+      }
 }
 
 .explanation {

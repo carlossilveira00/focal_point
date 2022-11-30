@@ -10,6 +10,14 @@ class ProjectsController < ApplicationController
   end
 
   def create
+    @project = Project.new(project_params)
+    @project.user_id = current_user.id
+
+    if @project.save
+      redirect_to project_path(@project.id)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
@@ -19,5 +27,11 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def project_params
+    params.require(:project).permit(:name, :description, :photos)
   end
 end

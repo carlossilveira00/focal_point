@@ -1,0 +1,82 @@
+.card-assigned {
+  background-color: #D9D9D9;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  justify-content: left;
+  border-radius: 15px;
+  height: 140px;
+  width: 130px;
+}
+
+.card-title {
+  background-color:white;
+  justify-content: left;
+  border-radius: 15px;
+  margin-left: 75px;
+  height: 70px;
+  width: 750px;
+}
+
+.card-subject {
+  background-color: #D9D9D9;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  justify-content: left;
+  border-radius: 15px;
+  height: 140px;
+  width: 920px;
+}
+
+.assigned-avatar {
+  height: 70px;
+  border-radius: 50px;
+}
+
+.card-description {
+  background-color: #D9D9D9;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  justify-content: left;
+  border-radius: 15px;
+  height: 200px;
+  width: 1080px;
+}
+
+.card-comment {
+  background-color: #D9D9D9;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  justify-content: left;
+  margin-top: 15px;
+  border-radius: 15px;
+  height: 75px;
+  width: 1080px;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+background: #ffddde;
+border-radius: 15px;
+color: #ff5a60;
+}
+
+::-webkit-scrollbar-thumb {
+background: #888;
+}
+
+.btn-submit {
+  margin-top: 15px;
+  margin-left: 870px;
+  background: #FFDDDE;
+  width: 150px;
+  height: 30px;
+  align-content: center;
+  border: none;
+  border-radius: 30px;
+  box-shadow: rgba(127, 127, 127, 0.2) 1px 5px 10px 1px;
+}
+
+.btn-submit:hover {
+  background: #FF5A60;
+  transition: 0.15s;
+  color: white;
+}

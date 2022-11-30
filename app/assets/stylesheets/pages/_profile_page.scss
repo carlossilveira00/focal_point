@@ -39,6 +39,12 @@
       border-radius: 30px;
       box-shadow: rgba(127, 127, 127, 0.2) 1px 5px 10px 1px;
     }
+
+    .btn:hover {
+      background: #FF5A60;
+      transition: 0.15s;
+      color: white;
+    }
   }
 
   .img-profile {
@@ -49,6 +55,17 @@
     width: 100%;
     }
   }
+}
+
+.btn-table {
+  border-radius: 30px;
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
+.btn-table:hover {
+  transition: 0.15s;
+  background-color: #FFDDDE;
 }
 
 .profile-items {

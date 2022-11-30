@@ -63,3 +63,24 @@
   align-items: center;
   padding: 8px 15px;
 }
+
+.create-ticket{
+  .btn{
+    background-color: #FFDDDE;
+    border-radius: 20px;
+  }
+  .btn:hover {
+    background: #FF5A60;
+    transition: 0.15s;
+    color: white;
+  }
+  .btn-table {
+    border-radius: 30px;
+    padding-top: 15px;
+    padding-left: 15px;
+  }
+  .btn-table:hover {
+    transition: 0.15s;
+    background-color:#FFDDDE;
+  }
+}

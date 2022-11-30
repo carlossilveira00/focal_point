@@ -1,0 +1,23 @@
+<div>
+<h1 style="margin-left:180px; margin-top:10px">Ticket</h1>
+<div class="text-center d-flex" style="margin-left:170px; margin-top:5px">
+  <div class="card-assigned text-center">
+    <p style="padding-top:5px"><strong>Assigned</strong></p>
+    <img class="assigned-avatar" src="http://res.cloudinary.com/djn023to9/image/upload/c_fill/v1/production/uksu8qrxln8cetj78lk72pglrsz3">
+  </div>
+  <div class="card-subject text-center" style="margin-left:30px">
+    <p style="padding-top:5px"><strong>Subject</strong></p>
+  <div class="card-title text-center"><h3><%= @ticket.title%></h3></div>
+</div>
+  </div>
+<div class="text-left" style="margin-left:170px; margin-top:15px">
+  <div class="card-description" style="overflow-y:scroll">
+    <p style="padding-top:5px; padding-left:20px"><strong>Description:</strong> <%= @ticket.description%></p>
+  </div>
+  <div class="card-comment" style="overflow-y:scroll">
+    <p style="padding-top:5px; padding-left:20px"><strong>Comment</strong></p>
+  </div>
+    <div class="form-actions text-right">
+      <input class="btn-submit" type="submit" value="Submit">
+    </div>
+</div>

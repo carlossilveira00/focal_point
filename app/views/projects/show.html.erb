@@ -95,6 +95,9 @@
       <button type="button" class="btn btn-secondary add-task" data-bs-toggle="modal" data-bs-target="#formModal"><i class="fa-solid fa-plus"></i></button>
     </div>
   </div>
+  <div class="create-ticket" style="display:flex;justify-content:center;margin-top:20px;">
+  <%= link_to "Create Ticket", new_project_ticket_path(@project.id), class:"btn text-center" %>
+  </div>
   <!-- MODAL FORM  -->
   <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
     <div class="modal-dialog">

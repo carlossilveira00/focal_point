@@ -12,14 +12,18 @@
   <body>
       <%= render "shared/flashes" %>
       <% if controller_name=="pages" && action_name=="home"%>
-      <%= render "shared/navbar" %>
-      <% end %>
-      <div class="page-container d-flex">
-        <% unless controller_name=="pages" && action_name=="home"%>
-        <%= render "shared/sidebar" %>
-        <% end %>
+        <%= render "shared/navbar" %>
         <%= yield %>
-    </div>
-      <%= render "shared/footer" %>
+        <%= render "shared/footer" %>
+      <%else%>
+      <div>
+        <div class="page-container d-flex">
+          <%= render "shared/sidebar" %>
+          <%= yield %>
+        </div>
+        <%= render "shared/footer" %>
+      <div>
+      <% end %>
+
   </body>
 </html>

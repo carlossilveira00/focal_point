@@ -21,7 +21,10 @@ class TicketsController < ApplicationController
   end
 
   def show
+    @project = Project.find(params[:project_id])
     @ticket = Ticket.find(params[:id])
+    @comments = Comment.where("ticket_id = ?", @ticket.id)
+    @new_comment = Comment.new()
   end
 
   private

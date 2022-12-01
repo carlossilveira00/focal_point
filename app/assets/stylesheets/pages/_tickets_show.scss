@@ -41,20 +41,20 @@
   width: 1080px;
 }
 
-::-webkit-scrollbar {
-  width: 18px;
-}
+// ::-webkit-scrollbar {
+//   width: 18px;
+// }
 
-::-webkit-scrollbar-track {
-background: #ffddde;
-border-radius: 18px;
-color: #ff5a60;
-}
+// ::-webkit-scrollbar-track {
+// background: #ffddde;
+// border-radius: 18px;
+// color: #ff5a60;
+// }
 
-::-webkit-scrollbar-thumb {
-background: #ff5a60;
-border-radius: 18px;
-}
+// ::-webkit-scrollbar-thumb {
+// background: #ff5a60;
+// border-radius: 18px;
+// }
 
 .btn-submit {
   margin-top: 15px;
@@ -72,4 +72,22 @@ border-radius: 18px;
   background: #FF5A60;
   transition: 0.15s;
   color: white;
+}
+
+
+.ticket-show{
+  ::-webkit-scrollbar {
+  width: 18px;
+}
+
+::-webkit-scrollbar-track {
+background: #ffddde;
+border-radius: 18px;
+color: #ff5a60;
+}
+
+::-webkit-scrollbar-thumb {
+background: #ff5a60;
+border-radius: 18px;
+}
 }

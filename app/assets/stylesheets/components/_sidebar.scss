@@ -23,7 +23,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: absolute;
+    position: sticky;
+    top: var(--navigation-bar-offset, 0px) !important;
     height: 100vh;
     width: 60px;
     background: #ffff;
@@ -71,7 +72,7 @@ position:relative;
 display:table-cell;
 vertical-align:middle;
 width:190px;
-  font-family: 'Titillium Web', sans-serif;
+font-family: 'Titillium Web', sans-serif;
 }
 
 .no-touch .scrollable.hover:hover {

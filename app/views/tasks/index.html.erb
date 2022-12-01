@@ -26,7 +26,7 @@
       <button type="button" class="btn btn-secondary add-task" data-bs-toggle="modal" data-bs-target="#formModal" data-bs-whatever="@mdo"><i class="fa-solid fa-plus"></i></button>
     </div>
     <div class="kanban-block text-center" >
-      <strong>To-Do</strong>
+      <strong>To-Do <button type="button" class="add-task" data-bs-toggle="modal" data-bs-target="#formModal" data-bs-whatever="@mdo"><i class="fa-solid fa-plus fa-2xs"></i></button></strong>
       <div id="todo" data-sortable-target="todo" style="margin-top:20px" >
         <% @tasks.each do |task|%>
           <% if task.status == "To-Do"%>
@@ -35,10 +35,9 @@
           <% end %>
         <% end %>
       </div>
-      <button type="button" class="btn btn-secondary add-task" data-bs-toggle="modal" data-bs-target="#formModal" data-bs-whatever="@mdo"><i class="fa-solid fa-plus"></i></button>
     </div>
     <div class="kanban-block text-center" >
-      <strong>In Progress</strong>
+      <strong>In Progress <button type="button" class="add-task" data-bs-toggle="modal" data-bs-target="#formModal" data-bs-whatever="@mdo"><i class="fa-solid fa-plus fa-2xs"></i></button></strong>
       <div id="inprogress" data-sortable-target="inprogress" style="margin-top:20px">
         <% @tasks.each do |task|%>
           <% if task.status == "In progress"%>
@@ -47,10 +46,9 @@
           <% end %>
         <% end %>
       </div>
-      <button type="button" class="btn btn-secondary add-task" data-bs-toggle="modal" data-bs-target="#formModal" data-bs-whatever="@mdo"><i class="fa-solid fa-plus"></i></button>
     </div>
     <div class="kanban-block text-center" >
-      <strong>Completed</strong>
+      <strong>Completed <button type="button" class="add-task" data-bs-toggle="modal" data-bs-target="#formModal" data-bs-whatever="@mdo"><i class="fa-solid fa-plus fa-2xs"></i></button></strong>
       <div id="completed" data-sortable-target="completed" style="margin-top:20px">
         <% @tasks.each do |task|%>
           <% if task.status == "Completed"%>
@@ -59,7 +57,6 @@
           <% end %>
         <% end %>
       </div>
-      <button type="button" class="btn btn-secondary add-task" data-bs-toggle="modal" data-bs-target="#formModal"><i class="fa-solid fa-plus"></i></button>
     </div>
   </div>
   <!-- MODAL FORM  -->

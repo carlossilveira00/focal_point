@@ -26,6 +26,9 @@
   border: 1px solid rgb(237, 234, 234);
 }
 .kanban-block{
+  .add-task{
+    padding:2px 4px;
+  }
 
   .modal-body{
     padding: 40px;
@@ -67,6 +70,10 @@
 }
 
 .create-ticket{
+  display:flex;
+  justify-content:end;
+  margin-top:20px;
+  margin-bottom:20px;
   .btn{
     background-color: #FFDDDE;
     border-radius: 20px;

@@ -2,7 +2,12 @@
   <div class="profile-card text-center" style="position: -webkit-sticky; position: sticky; top: var(--navigation-bar-offset, 20px) !important;">
     <div class="id-info d-flex justify-content-between">
       <div class="img-profile">
-          <img class="avatar" src="http://res.cloudinary.com/djn023to9/image/upload/c_fill/v1/production/uksu8qrxln8cetj78lk72pglrsz3">
+      <!-- Profile Picture From User -->
+        <%if current_user.photo.attached?%>
+          <%= cl_image_tag current_user.photo.key, class:"avatar", crop: :fill %>
+        <% else %>
+          <img class="avatar" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
+        <% end %>
       </div>
       <div class="users-info">
         <h3> Hello <%= current_user.first_name %>! </h3>
@@ -28,7 +33,13 @@
         <% @projects.each do |project|%>
         <a href="/projects/<%= project.id%>" style="text-decoration:none;">
           <div class="btn-table table-info d-flex justify-content-between text-center my-5" >
-            <img class="avatar" style="height:55px; width:55px" src="http://res.cloudinary.com/djn023to9/image/upload/c_fill/v1/production/uksu8qrxln8cetj78lk72pglrsz3">
+            <!-- Project Owner Photo -->
+            <% project_user = User.find(project.user_id) %>
+            <%if project_user.photo.attached?%>
+              <%= cl_image_tag project_user.photo.key, class:"avatar", style:"height:55px; width:55px", crop: :fill %>
+            <% else %>
+              <img class="avatar" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" style="height:55px; width:55px">
+            <% end %>
             <p style="width:120px; margin-top:15px;"><%= project.name%></p>
             <p style="width:120px; margin-top:15px;">Manager</p>
             <p style="width:120px; margin-top:15px;">On Going</p>

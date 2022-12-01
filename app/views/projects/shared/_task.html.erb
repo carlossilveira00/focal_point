@@ -5,5 +5,10 @@
       <i class="fa-solid fa-circle fa-2xs" style="color:#FF333A;"></i>
     <%end%>
   </div>
-  <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
+    <% task_user = User.find(task.user_id)%>
+    <%if task_user.photo.attached?%>
+        <%= cl_image_tag task_user.photo.key, class:"avatar", crop: :fill %>
+    <% else %>
+      <img class="avatar" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
+    <% end %>
 </div>

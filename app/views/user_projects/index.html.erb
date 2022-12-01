@@ -18,9 +18,9 @@
     </div>
   </div>
   <div class="profile-items">
-    <div class="categories-row d-flex justify-content-between" style="position: -webkit-sticky; position: sticky; top: var(--navigation-bar-offset, 0px) !important;">
-      <p class="1" style="margin-left:180px;">Project</p>
-      <p class="2">Role</p>
+    <div class="categories-row d-flex justify-content-end" style="position: -webkit-sticky; position: sticky; top: var(--navigation-bar-offset, 0px) !important;">
+      <p class="1" style="margin-right:147px;">Project</p>
+      <p class="2" style="margin-right:155px;">Role</p>
       <p class="3" style="margin-right:15px;">Status</p>
     </div>
     <div class="info-row">
@@ -28,10 +28,10 @@
         <% @projects.each do |project|%>
         <a href="/projects/<%= project.id%>" style="text-decoration:none;">
           <div class="btn-table table-info d-flex justify-content-between text-center my-5" >
-            <img class="avatar" style="margin-top:-8px; margin-bottom:8px;" src="http://res.cloudinary.com/djn023to9/image/upload/c_fill/v1/production/uksu8qrxln8cetj78lk72pglrsz3">
-            <p style="width:120px;"><%= project.name%></p>
-            <p style="width:120px;">Manager</p>
-            <p style="width:120px;">On Going</p>
+            <img class="avatar" style="height:55px; width:55px" src="http://res.cloudinary.com/djn023to9/image/upload/c_fill/v1/production/uksu8qrxln8cetj78lk72pglrsz3">
+            <p style="width:120px; margin-top:15px;"><%= project.name%></p>
+            <p style="width:120px; margin-top:15px;">Manager</p>
+            <p style="width:120px; margin-top:15px;">On Going</p>
           </div>
         </a>
         <% end %>

@@ -14,7 +14,7 @@
       <% if controller_name=="pages" && action_name=="home"%>
       <%= render "shared/navbar" %>
       <% end %>
-      <div class="page-container d-flex">
+      <div class="page-container">
         <% unless controller_name=="pages" && action_name=="home"%>
         <%= render "shared/sidebar" %>
         <% end %>

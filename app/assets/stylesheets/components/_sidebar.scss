@@ -11,6 +11,7 @@
     font-size: 2em;
     }
     .fa-solid {
+      position: relative;
     display: table-cell;
     width: 60px;
     height: 36px;
@@ -95,3 +96,6 @@ background-color:#FF5A60;
 .lower-btns {
   margin-top: 650%;
 }
+ .main-menu:hover {
+  width: max-content;
+ }

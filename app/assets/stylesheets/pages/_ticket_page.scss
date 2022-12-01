@@ -11,7 +11,7 @@
     padding-bottom: 15px;
     border-bottom: 1px solid grey;
     background-color: #F4F4F4;
-    p {
+    .ticket-title {
       border-radius: 20px;
       background-color: #FFDDDE;
       color: black;
@@ -30,23 +30,24 @@
       padding: 8px;
     }
   }
-  .btn{
+  .btn-ticket{
     background-color: #FFDDDE;
+    height: 40px;
     border-radius: 20px;
   }
-  .btn:hover {
+  .btn-ticket:hover {
     background: #FF5A60;
     transition: 0.15s;
     color: white;
   }
   .btn-table {
-    border-radius: 30px;
+    border-radius: 40px;
     padding-top: 15px;
     padding-left: 15px;
   }
   .btn-table:hover {
+    border-radius: 40px;
     transition: 0.15s;
-    background-color:#FFDDDE;
+    background-color: #d9d9d9;
   }
 }
-

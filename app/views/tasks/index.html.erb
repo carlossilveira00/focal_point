@@ -1,5 +1,5 @@
 <div class="text-center tasks-show">
-  <h1>My Tasks</h1>
+  <h2><%= @project.name%> - Tasks</h2>
   <div class="board" data-controller="sortable modal">
     <div class="kanban-block d-none text-center">
       <strong>Next Meeting</strong>
@@ -27,7 +27,7 @@
     </div>
     <div class="kanban-block text-center" >
       <strong>To-Do</strong>
-      <div id="todo" data-sortable-target="todo" >
+      <div id="todo" data-sortable-target="todo" style="margin-top:20px" >
         <% @tasks.each do |task|%>
           <% if task.status == "To-Do"%>
             <a id="link" data-bs-toggle="modal" data-bs-target="#task<%=task.id%>Modal"><%= render "projects/shared/task", task: task %></a>
@@ -39,7 +39,7 @@
     </div>
     <div class="kanban-block text-center" >
       <strong>In Progress</strong>
-      <div id="inprogress" data-sortable-target="inprogress">
+      <div id="inprogress" data-sortable-target="inprogress" style="margin-top:20px">
         <% @tasks.each do |task|%>
           <% if task.status == "In progress"%>
             <a id="link" data-bs-toggle="modal" data-bs-target="#task<%=task.id%>Modal"><%= render "projects/shared/task", task: task %></a>
@@ -51,7 +51,7 @@
     </div>
     <div class="kanban-block text-center" >
       <strong>Completed</strong>
-      <div id="completed" data-sortable-target="completed">
+      <div id="completed" data-sortable-target="completed" style="margin-top:20px">
         <% @tasks.each do |task|%>
           <% if task.status == "Completed"%>
             <a id="link" data-bs-toggle="modal" data-bs-target="#task<%=task.id%>Modal"><%= render "projects/shared/task", task: task %></a>

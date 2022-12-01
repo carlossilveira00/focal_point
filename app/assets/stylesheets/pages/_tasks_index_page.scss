@@ -1,5 +1,10 @@
 .tasks-show{
+  margin-top: 100px;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1300px;
   .board{
-    justify-content: space-evenly;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
   }
 }

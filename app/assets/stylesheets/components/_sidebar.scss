@@ -29,6 +29,9 @@ overflow:hidden;
 transition:width .05s linear;
 // -webkit-transform:translateZ(0) scale(1,1);
 z-index:1000;
+height:100vh;
+position: sticky;
+top: var(--navigation-bar-offset, 0px) !important;
 }
 
 .main-menu>ul {
@@ -93,5 +96,5 @@ background-color:#FF5A60;
 }
 
 .lower-btns {
-  margin-top: 650%;
+  margin-top: 750%;
 }

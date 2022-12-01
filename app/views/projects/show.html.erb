@@ -33,8 +33,8 @@
 
   <div class="board" data-controller="sortable modal">
     <div class="kanban-block text-center">
-      <strong>Next Meeting</strong>
-      <div id="nextmeeting" data-sortable-target="nextmeeting" >
+      <strong>Next Meeting <button type="button" class="add-task" data-bs-toggle="modal" data-bs-target="#formModal" data-bs-whatever="@mdo"><i class="fa-solid fa-plus"></i></button></strong>
+      <div id="nextmeeting" data-sortable-target="nextmeeting" style="margin-top:20px">
         <% @tasks.each do |task|%>
           <% if task.status == "Next Meeting"%>
             <a id="link" data-bs-toggle="modal" data-bs-target="#task<%=task.id%>Modal"><%= render "projects/shared/task", task: task %></a>
@@ -42,11 +42,10 @@
           <% end %>
         <% end %>
       </div>
-      <button type="button" class="btn btn-secondary add-task" data-bs-toggle="modal" data-bs-target="#formModal" data-bs-whatever="@mdo"><i class="fa-solid fa-plus"></i></button>
     </div>
     <div class="kanban-block text-center" >
-      <strong>Unassigned</strong>
-      <div id="unassigned" data-sortable-target="unassigned" >
+      <strong>Unassigned <button type="button" class="add-task" data-bs-toggle="modal" data-bs-target="#formModal" data-bs-whatever="@mdo"><i class="fa-solid fa-plus"></i></button></strong>
+      <div id="unassigned" data-sortable-target="unassigned" style="margin-top:20px">
         <% @tasks.each do |task|%>
           <% if task.status == "Unassigned"%>
             <a id="link" data-bs-toggle="modal" data-bs-target="#task<%=task.id%>Modal"><%= render "projects/shared/task", task: task %></a>
@@ -54,11 +53,10 @@
           <% end %>
         <% end %>
       </div>
-      <button type="button" class="btn btn-secondary add-task" data-bs-toggle="modal" data-bs-target="#formModal" data-bs-whatever="@mdo"><i class="fa-solid fa-plus"></i></button>
     </div>
     <div class="kanban-block text-center" >
-      <strong>To-Do</strong>
-      <div id="todo" data-sortable-target="todo" >
+      <strong>To-Do <button type="button" class="add-task" data-bs-toggle="modal" data-bs-target="#formModal" data-bs-whatever="@mdo"><i class="fa-solid fa-plus"></i></button></strong>
+      <div id="todo" data-sortable-target="todo" style="margin-top:20px" >
         <% @tasks.each do |task|%>
           <% if task.status == "To-Do"%>
             <a id="link" data-bs-toggle="modal" data-bs-target="#task<%=task.id%>Modal"><%= render "projects/shared/task", task: task %></a>
@@ -66,11 +64,10 @@
           <% end %>
         <% end %>
       </div>
-      <button type="button" class="btn btn-secondary add-task" data-bs-toggle="modal" data-bs-target="#formModal" data-bs-whatever="@mdo"><i class="fa-solid fa-plus"></i></button>
     </div>
     <div class="kanban-block text-center" >
-      <strong>In Progress</strong>
-      <div id="inprogress" data-sortable-target="inprogress">
+      <strong>In Progress <button type="button" class="add-task" data-bs-toggle="modal" data-bs-target="#formModal" data-bs-whatever="@mdo"><i class="fa-solid fa-plus"></i></button></strong>
+      <div id="inprogress" data-sortable-target="inprogress" style="margin-top:20px">
         <% @tasks.each do |task|%>
           <% if task.status == "In progress"%>
             <a id="link" data-bs-toggle="modal" data-bs-target="#task<%=task.id%>Modal"><%= render "projects/shared/task", task: task %></a>
@@ -78,11 +75,10 @@
           <% end %>
         <% end %>
       </div>
-      <button type="button" class="btn btn-secondary add-task" data-bs-toggle="modal" data-bs-target="#formModal" data-bs-whatever="@mdo"><i class="fa-solid fa-plus"></i></button>
     </div>
     <div class="kanban-block text-center" >
-      <strong>Completed</strong>
-      <div id="completed" data-sortable-target="completed">
+      <strong>Completed <button type="button" class="add-task" data-bs-toggle="modal" data-bs-target="#formModal"><i class="fa-solid fa-plus"></i></button></strong>
+      <div id="completed" data-sortable-target="completed" style="margin-top:20px">
         <% @tasks.each do |task|%>
           <% if task.status == "Completed"%>
             <a id="link" data-bs-toggle="modal" data-bs-target="#task<%=task.id%>Modal"><%= render "projects/shared/task", task: task %></a>
@@ -90,10 +86,9 @@
           <% end %>
         <% end %>
       </div>
-      <button type="button" class="btn btn-secondary add-task" data-bs-toggle="modal" data-bs-target="#formModal"><i class="fa-solid fa-plus"></i></button>
     </div>
   </div>
-  <div class="create-ticket" style="display:flex;justify-content:center;margin-top:20px;margin-bottom:20px;">
+  <div class="create-ticket">
   <%= link_to "Create Ticket", new_project_ticket_path(@project.id), class:"btn text-center" %>
   </div>
   <!-- MODAL FORM  -->

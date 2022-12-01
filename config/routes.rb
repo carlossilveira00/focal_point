@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   resources :projects, except: [:index] do
     post "/projects/:project_id/tasks", to: "tasks#create", as: :task_create
     resources :tasks
-    resources :tickets
+    resources :tickets do
+      resources :comments
+    end
     member do
       patch "/tasks/:task_id/set_status", to: "tasks#set_status", as: :set_task_status
     end

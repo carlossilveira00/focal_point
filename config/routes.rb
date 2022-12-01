@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "profile", to: "user_projects#index"
   get "ticket", to: "pages#ticket_show"
   get "tickets", to: "pages#ticket"
+  get "test", to: "pages#test"
   resources :projects, except: [:index] do
     post "/projects/:project_id/tasks", to: "tasks#create", as: :task_create
     resources :tasks

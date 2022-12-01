@@ -6,4 +6,5 @@ class PagesController < ApplicationController
 
   def ticket_show
   end
+
 end

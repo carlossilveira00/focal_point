@@ -11,7 +11,7 @@
 
   <body>
       <%= render "shared/flashes" %>
-      <% if controller_name=="pages" && action_name=="home"%>
+      <% if controller_name=="pages" && action_name=="home" %>
         <%= render "shared/navbar" %>
         <%= yield %>
         <%= render "shared/footer" %>

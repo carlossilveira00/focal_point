@@ -5,8 +5,24 @@
 }
 
 .banner {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 180px;
+  padding-bottom: 180px;
+
+  h1{
+    color: white;
+    font-size: 330%;
+  }
+
+  p{
+    color: white;
+    font-size: 140%;
+  }
+
+  .btn {
+    border-radius: 10px;
+    background-color: #FFDDDE;
+    color: black;
+  }
 
   .info-details {
     padding-top: 40px;
@@ -26,13 +42,11 @@
           height: 300px;
           width: 250px;
           border-radius: 10px;
-          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         }
         .min-img{
           height: 280px;
           width: 220px;
           border-radius: 10px;
-          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         }
       }
 }
@@ -44,7 +58,7 @@
 
   .img-explanation {
     height: 270px;
-    width: 300px;
+    width: 350px;
     border-radius: 20px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }

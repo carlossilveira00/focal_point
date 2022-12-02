@@ -15,7 +15,12 @@
         </div>
         <div style="display:flex;align-items:center;">
           <h6 style="margin-right:20px;margin-bottom:0px;"><strong style="margin-right:10px;">Assigned to:</strong> <%= User.find(task.user_id).first_name%> <%= User.find(task.user_id).last_name%></h6>
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
+          <% task_user = User.find(task.user_id)%>
+          <%if task_user.photo.attached?%>
+            <%= cl_image_tag task_user.photo.key, class:"avatar", crop: :fill %>
+          <% else %>
+            <img class="avatar" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
+          <% end %>
         </div>
       </div>
       <div class="modal-footer">

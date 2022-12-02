@@ -10,14 +10,7 @@
   <div class="info-row">
   <!-- Ticket info  -->
     <% @tickets.each do |ticket|%>
-      <div class="btn-table table-info d-flex justify-content-between align-middle text-center my-5" type="button" href="/projects/:id">
-        <img class="avatar" style="margin-top:-3px; height:55px; width:55px" src="http://res.cloudinary.com/djn023to9/image/upload/c_fill/v1/production/uksu8qrxln8cetj78lk72pglrsz3">
-        <p style="width:120px;"><%= User.find(ticket.user_id).first_name%> <%= User.find(ticket.user_id).last_name%></p>
-        <p style="width:120px; padding-top:10px"><%= ticket.title%></p>
-        <p style="width:120px; padding-top:10px"><!-- How is this task-assigned to -->Gabriel Bruds</p>
-        <p style="width:120px; padding-top:10px"><%= ticket.status%></p>
-        <a class="btn btn-ticket text-center" style="margin-top:5px" type="button" href="/projects/<%= @project.id%>/tickets/<%= ticket.id%>">See Comments</a>
-      </div>
+      <%= render "tickets/shared/ticket_row", ticket: ticket%>
     <% end %>
   <!-- Ticket info  -->
   </div>

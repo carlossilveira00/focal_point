@@ -1,0 +1,14 @@
+<div class="btn-table table-info d-flex justify-content-between align-middle text-center my-5" type="button" href="/projects/:id">
+  <!-- Ticket User Photo -->
+  <% ticket_user = User.find(ticket.user_id) %>
+  <%if ticket_user.photo.attached?%>
+    <%= cl_image_tag ticket_user.photo.key, class:"avatar", style:"margin-top:-3px; height:55px; width:55px", crop: :fill %>
+  <% else %>
+    <img class="avatar" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" style="margin-top:-3px; height:55px; width:55px">
+  <% end %>
+  <p style="width:120px;"><%= User.find(ticket.user_id).first_name%> <%= User.find(ticket.user_id).last_name%></p>
+  <p style="width:120px; padding-top:10px"><%= ticket.title%></p>
+  <p style="width:120px; padding-top:10px"><!-- How is this task-assigned to -->Gabriel Bruds</p>
+  <p style="width:120px; padding-top:10px"><%= ticket.status%></p>
+  <a class="btn btn-ticket text-center" style="margin-top:5px" type="button" href="/projects/<%= @project.id%>/tickets/<%= ticket.id%>">See Comments</a>
+</div>

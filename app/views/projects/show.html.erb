@@ -2,7 +2,7 @@
 <div>
   <div class="product-banner">
     <div style="width:40%;">
-      <div style="display:flex; justify-content:center;margin-bottom:20px;">
+      <div style="display:flex; justify-content:center;margin-bottom:20px;width:500px">
         <!-- Project Owner Photo.-->
         <% project_user = User.find(@project.user_id)%>
         <%if project_user.photo.attached?%>
@@ -10,9 +10,11 @@
         <% else %>
           <img class="avatar" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
         <% end %>
-        <h1><%= @project.name%></h1>
+        <h1 style="word-break: break-word;margin-left:20px;"><%= @project.name%></h1>
       </div>
-      <p><%= @project.description%></p>
+      <div style="word-break:break-word">
+        <%= @project.content %>
+      </div>
     </div>
     <div id="carousel-<%= @project.id%>" class="carousel slide" data-bs-ride="carousel" style="width:40%;">
       <div class="carousel-inner" style="border-radius:20px;">
@@ -113,7 +115,7 @@
     </div>
   </div>
   <div class="create-ticket">
-  <%= link_to "Create Ticket", new_project_ticket_path(@project.id), class:"btn text-center" %>
+  <%= link_to "Create Ticket", new_project_ticket_path(@project.id), class:"btn text-center", style:"margin-right:5%;" %>
   </div>
   <!-- MODAL FORM  -->
   <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">

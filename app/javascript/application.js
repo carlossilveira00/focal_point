@@ -5,3 +5,9 @@ import "bootstrap"
 
 // Complete SortableJS (with all plugins)
 import Sortable from 'sortablejs/modular/sortable.complete.esm.js';
+import "trix"
+import "@rails/actiontext"
+
+
+import "trix"
+import "@rails/actiontext"

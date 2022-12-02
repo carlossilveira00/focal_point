@@ -1,15 +1,15 @@
 <div style="margin-left:130px">
-  <h1 style="margin-top:10px; margin-left:20px">Ticket</h1>
+  <h1 style="margin-top:10px; margin-left:20px">Ticket </h1>
   <div>
-    <div class="text-center padding-left:100px" style="margin-left:10px; margin-top:15px">
-      <div class="card-subject text-center">
-        <div class="d-flex">
+    <div class="first-card padding-left:100px" style="margin-left:10px; margin-top:15px">
+      <div class="card-subject">
+        <div class="user-info d-flex">
           <img class="assigned-avatar" style="margin:20px" src="http://res.cloudinary.com/djn023to9/image/upload/c_fill/v1/production/uksu8qrxln8cetj78lk72pglrsz3">
-          <h2 style="padding-top:20px; padding-left:350px;"><%= @ticket.title%></h2>
+          <h2 style="padding-top:20px;"><%= @ticket.title%></h2>
         </div>
-        <div class="card-description text-left" style="overflow-y:scroll; border-radius:5px;">
-          <h4 style="padding-top:10px">Description:</h4>
-          <p><%= @ticket.description%></p>
+        <div class="card-description text-left" style="overflow-y:scroll; border-radius:10px;">
+          <h4 style="padding-top:10px; text-align: center !important;">Description:</h4>
+          <p style="padding-left:2%; padding-right:2%;"><%= @ticket.description%></p>
         </div>
       </div>
     </div>
@@ -26,7 +26,10 @@
       <!-- Form to Submit new comment -->
       <div class="form-actions text-right">
         <%= simple_form_for [@project,@ticket,@new_comment] do |f| %>
-          <%= f.input :comment, :as => :text, :input_html => { 'rows' => 5, 'cols' => 10 } %>
+          <%= f.input :comment,
+                      as: :text,
+                      wrapper_html: { class: "comment-section" },
+                      input_html: { 'rows' => 5, 'cols' => 10}, :input_html => { :class => "comment-box" }  %>
           <%= f.input :ticket_id, :as => :hidden, :input_html => { :value => @ticket.id }%>
           <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id }%>
           <%= f.button :submit, class:"btn-submit" %>

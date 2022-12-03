@@ -12,6 +12,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     @project.user_id = current_user.id
+    @project.chatroom_id = Chatroom.create(name: @project.name).id
 
     if @project.save
       redirect_to project_path(@project.id)

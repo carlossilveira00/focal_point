@@ -51,7 +51,11 @@
       </a>
     </li>
     <li>
-      <a href="#">
+      <%if @project.nil?%>
+        <a href="">
+      <% else%>
+        <a href="/projects/<%=@project.id%>/chatrooms/<%= @project.chatroom_id%>">
+      <%end%>
         <i class="fa-solid fa-comment"></i>
         <span class="nav-text">Chat</span>
       </a>

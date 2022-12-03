@@ -21,8 +21,8 @@
 
   .btn {
     border-radius: 10px;
-    background-color: #FFDDDE;
-    color: black;
+    background-color: white;
+    color: #283975;
   }
 
   .btn-scroll-down {
@@ -31,8 +31,8 @@
     text-align: center;
     text-decoration: none;
     border-radius: 10px;
-    background-color: #FFDDDE;
-    color: black;
+    background-color: white;
+    color: #283975;
     padding: 10px;
   }
 
@@ -64,35 +64,31 @@
 }
 
 .explanation {
-  margin-left: 320px;
-  margin-right: 320px;
+  margin-left: 230px;
+  margin-right: 230px;
 
   .explanation-card-1 {
-    border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 20px;
     padding-right: 6%;
     padding-top: 2%;
     padding-bottom: 2%;
   }
 
   .explanation-card-2 {
-    border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 20px;
     padding-left: 6%;
     padding-top: 2%;
     padding-bottom: 2%;
   }
 
   .img-explanation {
-    height: 270px;
-    width: 350px;
+    height: 380px;
+    width: 450px;
     border-radius: 20px;
   }
   .info {
-    width: 350px;
+    width: 300px;
     margin-top: 67px;
     p{
-      font-size: 18px;
+      font-size: 140%;
     }
   }
 }

@@ -14,7 +14,13 @@ Rails.application.routes.draw do
     member do
       patch "/tasks/:task_id/set_status", to: "tasks#set_status", as: :set_task_status
     end
+    # Chatroom
+    resources :chatrooms, only: :show do
+      #messages
+      resources :messages, only: :create
+    end
   end
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

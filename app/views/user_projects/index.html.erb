@@ -17,7 +17,7 @@
     <div class="user-record text-center">
       <p class="text-center">Your info:</p>
       <div class="my-info text-center">
-        <p style="margin-left:20px"> <%= current_user.information %> </p>
+        <p> <%= current_user.information %> </p>
       </div>
       <a class="btn text-center" type="button" href="/users/edit">Update Profile</a>
     </div>
@@ -48,6 +48,6 @@
         <% end %>
         <!-- Div for project information. -->
     </div>
-    <%= link_to "Create new Project", new_project_path, class:"profile-card btn", style:"background-color:#FFDDDE;" %>
+    <%= link_to "Create new Project", new_project_path, class:"create-project btn" %>
   </div>
 </div>

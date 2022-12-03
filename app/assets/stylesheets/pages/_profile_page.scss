@@ -6,11 +6,12 @@
 
 .profile-card {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  border-radius: 15px;
+  border-radius: 5px;
   text-align: center;
   padding: 20px;
   height: min-content;
   margin-right: 74px;
+  background-color: white;
 
 
   .my-info{
@@ -26,7 +27,7 @@
     padding-top: 30px;
     padding-left: 10px;
     p:hover {
-      color: #FF5A60;
+      color: #283975;
     }
   }
 
@@ -35,15 +36,17 @@
 
     .btn {
       margin-top: 10px;
-      background: #FFDDDE;
+      background: #364B92;
+      color: white;
       width: 150px;
       align-content: center;
-      border-radius: 30px;
+      border-radius: 10px;
       box-shadow: rgba(127, 127, 127, 0.2) 1px 5px 10px 1px;
     }
 
     .btn:hover {
-      background: #FF5A60;
+      background: #283975;
+      color: white;
       transition: 0.15s;
       color: white;
     }
@@ -60,7 +63,7 @@
 }
 
 .btn-table {
-  border-radius: 30px;
+  border-radius: 10px;
   padding-top: 15px;
   padding-left: 15px;
 }
@@ -72,22 +75,23 @@
 
 .profile-items {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  border-radius: 15px;
+  border-radius: 5px;
   padding: 20px;
   height: max-content;
   width: 800px;
+  background-color: white;
 
   .categories-row{
     padding: 4px;
     padding-top: 10px;
     padding-bottom: 15px;
     border-bottom: 1px solid grey;
-    background-color: #f4f4f4;
+    background-color: white;
 
     p {
-      border-radius: 20px;
-      background-color: #FFDDDE;
-      color: black;
+      border-radius: 5px;
+      background-color: #364B92;
+      color: white;
       padding: 3px;
       padding-left: 15px;
       padding-right: 15px;
@@ -104,6 +108,19 @@
 
     .table-info {
       padding: 8px;
+    }
+  }
+
+  .create-project {
+    border-radius: 5px;
+    background-color: #364B92;
+    color: white;
+    padding: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 38%;
+    p:hover {
+      color: #283975;
     }
   }
 }

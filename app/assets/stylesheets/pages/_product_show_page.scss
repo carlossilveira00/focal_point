@@ -7,7 +7,7 @@
   margin-left:5%;
   margin-right:5%;
   padding:40px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .board{
@@ -75,21 +75,22 @@
   margin-top:20px;
   margin-bottom:20px;
   .btn{
-    background-color: #FFDDDE;
-    border-radius: 20px;
+    background-color: #364B92;
+    color: white;
+    border-radius: 10px;
   }
   .btn:hover {
-    background: #FF5A60;
+    background: #283975;
     transition: 0.15s;
     color: white;
   }
   .btn-table {
-    border-radius: 30px;
+    border-radius: 10px;
     padding-top: 15px;
     padding-left: 15px;
   }
   .btn-table:hover {
     transition: 0.15s;
-    background-color:#FFDDDE;
+    background-color:#283975;
   }
 }

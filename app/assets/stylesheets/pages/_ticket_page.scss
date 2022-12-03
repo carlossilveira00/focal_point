@@ -1,21 +1,23 @@
 .ticket-items {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  border-radius: 15px;
+  border-radius: 5px;
   padding: 20px;
   height: max-content;
   width: 80%;
   margin-left:auto;
   margin-right:auto;
+  margin-top: 1%;
+  background-color: white;
   .categories-row{
     padding: 4px;
     padding-top: 10px;
     padding-bottom: 15px;
     border-bottom: 1px solid grey;
-    background-color: #F4F4F4;
+    background-color: white;
     .ticket-title {
-      border-radius: 20px;
-      background-color: #FFDDDE;
-      color: black;
+      border-radius: 10px;
+      background-color: #364B92;
+      color: white;
       padding: 3px;
       padding-left: 15px;
       padding-right: 15px;
@@ -32,22 +34,23 @@
     }
   }
   .btn-ticket{
-    background-color: #FFDDDE;
+    background-color: #364B92;
+    color: white;
     height: 40px;
-    border-radius: 20px;
+    border-radius: 10px;
   }
   .btn-ticket:hover {
-    background: #FF5A60;
+    background: #283975;
     transition: 0.15s;
     color: white;
   }
   .btn-table {
-    border-radius: 40px;
+    border-radius: 10px;
     padding-top: 15px;
     padding-left: 15px;
   }
   .btn-table:hover {
-    border-radius: 40px;
+    border-radius: 10px;
     transition: 0.15s;
     background-color: #d9d9d9;
   }

@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   get "tickets", to: "pages#ticket"
   get "test", to: "pages#test"
   resources :projects, except: [:index] do
+    post "user_projects", to: "user_projects#create"
+    resources :user_projects, only: [] do
+      patch :accept
+      patch :decline
+    end
     post "/projects/:project_id/tasks", to: "tasks#create", as: :task_create
     resources :tasks
     resources :tickets do

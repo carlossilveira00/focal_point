@@ -14,9 +14,7 @@ class TasksController < ApplicationController
   def create
     @task = Task.new()
     @task.update(task_params)
-    if @task.save
-      redirect_to projects_path(params[:project_id])
-    end
+    redirect_to projects_path(params[:project_id]) if @task.save
   end
 
   def destroy

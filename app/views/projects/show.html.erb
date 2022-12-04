@@ -63,7 +63,10 @@
 
   <div class="board" data-controller="sortable modal">
     <div class="kanban-block text-center">
-      <strong>Next Meeting <button type="button" class="add-task" data-bs-toggle="modal" data-bs-target="#formModal" data-bs-whatever="@mdo"><i class="fa-solid fa-plus"></i></button></strong>
+      <div class="board-title">
+        <p><strong>Next Meeting</strong></p>
+        <button type="button" class="add-task" data-bs-toggle="modal" data-bs-target="#formModal" data-bs-whatever="@mdo"><i class="fa-solid fa-plus"></i></button>
+      </div>
       <div id="nextmeeting" data-sortable-target="nextmeeting" style="margin-top:20px">
         <% @tasks.each do |task|%>
           <% if task.status == "Next Meeting"%>
@@ -74,7 +77,10 @@
       </div>
     </div>
     <div class="kanban-block text-center" >
-      <strong>Unassigned <button type="button" class="add-task" data-bs-toggle="modal" data-bs-target="#formModal" data-bs-whatever="@mdo"><i class="fa-solid fa-plus"></i></button></strong>
+      <div class="board-title">
+        <p><strong>Unassigned</strong></p>
+        <button type="button" class="add-task" data-bs-toggle="modal" data-bs-target="#formModal" data-bs-whatever="@mdo"><i class="fa-solid fa-plus"></i></button>
+      </div>
       <div id="unassigned" data-sortable-target="unassigned" style="margin-top:20px">
         <% @tasks.each do |task|%>
           <% if task.status == "Unassigned"%>
@@ -85,7 +91,10 @@
       </div>
     </div>
     <div class="kanban-block text-center" >
-      <strong>To-Do <button type="button" class="add-task" data-bs-toggle="modal" data-bs-target="#formModal" data-bs-whatever="@mdo"><i class="fa-solid fa-plus"></i></button></strong>
+      <div class="board-title">
+        <p><strong>To-Do</strong></p>
+        <button type="button" class="add-task" data-bs-toggle="modal" data-bs-target="#formModal" data-bs-whatever="@mdo"><i class="fa-solid fa-plus"></i></button>
+      </div>
       <div id="todo" data-sortable-target="todo" style="margin-top:20px" >
         <% @tasks.each do |task|%>
           <% if task.status == "To-Do"%>
@@ -96,7 +105,10 @@
       </div>
     </div>
     <div class="kanban-block text-center" >
-      <strong>In Progress <button type="button" class="add-task" data-bs-toggle="modal" data-bs-target="#formModal" data-bs-whatever="@mdo"><i class="fa-solid fa-plus"></i></button></strong>
+      <div class="board-title">
+        <p><strong>In Progress</strong></p>
+        <button type="button" class="add-task" data-bs-toggle="modal" data-bs-target="#formModal" data-bs-whatever="@mdo"><i class="fa-solid fa-plus"></i></button>
+      </div>
       <div id="inprogress" data-sortable-target="inprogress" style="margin-top:20px">
         <% @tasks.each do |task|%>
           <% if task.status == "In progress"%>
@@ -107,7 +119,10 @@
       </div>
     </div>
     <div class="kanban-block text-center" >
-      <strong>Completed <button type="button" class="add-task" data-bs-toggle="modal" data-bs-target="#formModal"><i class="fa-solid fa-plus"></i></button></strong>
+      <div class="board-title">
+        <p><strong>Completed</strong></p>
+        <button type="button" class="add-task" data-bs-toggle="modal" data-bs-target="#formModal" data-bs-whatever="@mdo"><i class="fa-solid fa-plus"></i></button>
+      </div>
       <div id="completed" data-sortable-target="completed" style="margin-top:20px">
         <% @tasks.each do |task|%>
           <% if task.status == "Completed"%>
@@ -133,7 +148,7 @@
           <%= simple_form_for [@project,@new_task] do |f| %>
             <%= f.input :title %>
             <%= f.input :description, :as => :text, :input_html => { 'rows' => 5, 'cols' => 10 } %>
-            <%= f.input :priority, as: :numeric %>
+            <%= f.input :priority, collection: ["Critical","High","Medium", "Low" ]  %>
             <%= f.input :status, collection: ["Next Meeting","Unassigned","To-Do", "In progress", "Completed" ] %>
             <%= f.input :user_id,
             collection: @users.map{|user| [user.id, "#{user.first_name} #{user.last_name}"]},

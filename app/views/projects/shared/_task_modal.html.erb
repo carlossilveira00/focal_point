@@ -2,17 +2,11 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title" id="task<%=task.id%>ModalLabel"><%=task.title%></h3>
+        <h4 class="modal-title" id="task<%=task.id%>ModalLabel"><%=task.title%>  <span class="tag-<%=task.priority.downcase%>"><i class="fa-solid fa-circle"></i> <%=task.priority%></span></h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <p><strong>Description:</strong><%=task.description%></p>
-        <div style="display:flex;align-items:center">
-          <strong>Priority:</strong>
-            <% task.priority.times do %>
-              <i class="fa-solid fa-fire-flame-simple" style="color:#FF333A;"></i>
-            <%end%>
-        </div>
         <div style="display:flex;align-items:center;">
           <h6 style="margin-right:20px;margin-bottom:0px;"><strong style="margin-right:10px;">Assigned to:</strong> <%= User.find(task.user_id).first_name%> <%= User.find(task.user_id).last_name%></h6>
           <% task_user = User.find(task.user_id)%>

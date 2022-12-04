@@ -1,7 +1,7 @@
 .card-assigned {
   background-color: #cccaca;
   justify-content: left;
-  border-radius: 15px;
+  border-radius: 5px;
   height: 140px;
   width: 130px;
 }
@@ -11,13 +11,16 @@ width: 980px;
 }
 
 .card-subject {
-  background-color: #FFDDDE;
+  background-color: #435CAE;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   margin-top: 10px;
   justify-content: left;
-  border-radius: 15px;
+  border-radius: 5px;
   height: 370px;
   width: 1080px;
+  h2{
+    color: white;
+  }
 }
 
 .assigned-avatar {
@@ -40,7 +43,7 @@ width: 980px;
   margin-top: 10px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   justify-content: left;
-  border-radius: 15px;
+  border-radius: 5px;
   height: 100px;
   width: 90%;
 }
@@ -64,16 +67,17 @@ width: 980px;
   margin-top: 1%;
   margin-bottom: 2%;
   margin-left: 86%;
-  background: #FFDDDE;
+  background: #3D54A0;
+  color: white;
   height: 40px;
   align-content: center;
   border: none;
-  border-radius: 40px;
+  border-radius: 10px;
   box-shadow: rgba(127, 127, 127, 0.2) 1px 5px 10px 1px;
 }
 
 .btn-submit:hover {
-  background: #FF5A60;
+  background: #283975;
   transition: 0.15s;
   color: white;
 }
@@ -87,11 +91,11 @@ width: 980px;
 ::-webkit-scrollbar-track {
 background: #ffddde;
 border-radius: 14px;
-color: #ff5a60;
+color: #283975;
 }
 
 ::-webkit-scrollbar-thumb {
-background: #ff5a60;
+background: #283975;
 border-radius: 14px;
 }
 }
@@ -102,8 +106,9 @@ border-radius: 14px;
 }
 
 .form-actions, .comment-section {
-  border-radius: 15px;
+  border-radius: 5px;
   padding-bottom: 2%;
+  margin-left: 5px;
 }
 
 .form-actions {
@@ -123,4 +128,9 @@ border-radius: 14px;
     background-color: white;
     border: 1px solid #f0f0f0;
   }
+}
+
+.text-form-ticket {
+  color: white;
+  font-size: 140%;
 }

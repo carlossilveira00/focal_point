@@ -1,48 +1,58 @@
 <nav class="main-menu">
   <ul class="upper-btns">
-    <li>
-      <a href="/">
-        <i class="fa-solid fa-house"></i>
-        <span class="nav-text">Home Page</span>
-      </a>
-    </li>
-    <li>
-      <%if @project.nil?%>
-        <a href="">
-      <% else%>
-        <a href="/projects/<%=@project.id%>">
-      <%end%>
-        <i class="fa-solid fa-diagram-project"></i>
-        <span class="nav-text">My Project</span>
-      </a>
-    </li>
-    <li class="has-subnav">
-      <%if @project.nil?%>
-        <a href="">
-      <% else%>
-        <a href="/projects/<%=@project.id%>/tasks">
-      <%end%>
-        <i class="fa-solid fa-list-check"></i>
-        <span class="nav-text">My Tasks</span>
-      </a>
-    </li>
-    <li class="has-subnav">
-      <%if @project.nil?%>
-        <a href="">
-      <% else%>
-        <a href="/projects/<%=@project.id%>/tickets">
-      <%end%>
-        <i class="fa-solid fa-ticket"></i>
-        <span class="nav-text">Ticket's Page</span>
-      </a>
-    </li>
-    <li class="has-subnav">
-      <a href="/">
-        <i class="fa-solid fa-chart-line"></i>
-        <span class="nav-text">Performace Analysis</span>
-      </a>
-    </li>
+    <%if @project.nil?%>
+      <li>
+        <a href="/">
+          <i class="fa-solid fa-house"></i>
+          <span class="nav-text">Home Page</span>
+        </a>
+      </li>
+    <% else%>
+      <li>
+        <a href="/">
+          <i class="fa-solid fa-house"></i>
+          <span class="nav-text">Home Page</span>
+        </a>
+      </li>
+      <li>
+        <%if @project.nil?%>
+          <a href="">
+        <% else%>
+          <a href="/projects/<%=@project.id%>">
+        <%end%>
+          <i class="fa-solid fa-diagram-project"></i>
+          <span class="nav-text">My Project</span>
+        </a>
+      </li>
+      <li class="has-subnav">
+        <%if @project.nil?%>
+          <a href="">
+        <% else%>
+          <a href="/projects/<%=@project.id%>/tasks">
+        <%end%>
+          <i class="fa-solid fa-list-check"></i>
+          <span class="nav-text">My Tasks</span>
+        </a>
+      </li>
+      <li class="has-subnav">
+        <%if @project.nil?%>
+          <a href="">
+        <% else%>
+          <a href="/projects/<%=@project.id%>/tickets">
+        <%end%>
+          <i class="fa-solid fa-ticket"></i>
+          <span class="nav-text">Ticket Page</span>
+        </a>
+      </li>
+      <li class="has-subnav">
+        <a href="/">
+          <i class="fa-solid fa-chart-line"></i>
+          <span class="nav-text">Performace Analysis</span>
+        </a>
+      </li>
+    <%end%>
   </ul>
+
   <ul class="lower-btns">
     <li>
       <a href="#">

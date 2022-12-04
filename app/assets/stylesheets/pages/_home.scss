@@ -100,13 +100,13 @@
     padding-bottom: 15px;
   }
   .list-comments {
-    .comments {
-      margin-top: 15px;
-      margin-bottom: 30px;
-    }
+    // .comments {
+      // margin-top: 15px;
+      // margin-bottom: 30px;
+    // }
       .card-home{
-        height: 155px;
-        width: 18rem;
+        height: 165px;
+        width: fit-content;
         background-color:white;
         border-radius:10px;
         margin-left: 20px;
@@ -114,6 +114,16 @@
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         .card-title {
           padding-bottom: 7px;
+        }
+      }
+
+      .card-home{
+        font-size: 56%;
+        .card-title{
+          font-size: 150%;
+        }
+        .card-text {
+          font-size: 130%;
         }
       }
     }

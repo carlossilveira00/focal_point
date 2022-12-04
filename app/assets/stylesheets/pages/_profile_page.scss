@@ -36,7 +36,7 @@
 
     .btn {
       margin-top: 10px;
-      background: #364B92;
+      background: #3D54A0;
       color: white;
       width: 150px;
       align-content: center;
@@ -113,14 +113,14 @@
 
   .create-project {
     border-radius: 5px;
-    background-color: #364B92;
+    background-color: #3D54A0;
     color: white;
     padding: 3px;
     padding-left: 15px;
     padding-right: 15px;
     margin-left: 38%;
-    p:hover {
-      color: #283975;
-    }
+  }
+  .create-project:hover {
+    background-color: #283975;
   }
 }

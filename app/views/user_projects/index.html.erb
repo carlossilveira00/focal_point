@@ -31,7 +31,7 @@
     <div class="info-row">
         <!-- Div for project information. -->
         <% @projects.each do |project|%>
-        <a href="/projects/<%= project.id%>" style="text-decoration:none;">
+        <a href="/projects/<%= project.id %>" style="text-decoration:none;">
           <div class="btn-table table-info d-flex justify-content-between text-center my-5" >
             <!-- Project Owner Photo -->
             <% project_user = User.find(project.user_id) %>

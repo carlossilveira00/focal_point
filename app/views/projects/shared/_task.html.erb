@@ -1,10 +1,5 @@
-<div class="task" id="<%= set_task_status_project_url(task_id: task.id, id: @project.id) %>" >
+<div class="task priority-<%= task.priority.downcase%>" id="<%= set_task_status_project_url(task_id: task.id, id: @project.id) %>" >
   <em style="margin:0; max-width:150px;white-space:initial;"><%= task.title%></em>
-  <div style="display:flex;margin: 0 20px;">
-    <% task.priority.times do %>
-      <i class="fa-solid fa-circle fa-2xs" style="color:#FF333A;"></i>
-    <%end%>
-  </div>
     <% task_user = User.find(task.user_id)%>
     <%if task_user.photo.attached?%>
         <%= cl_image_tag task_user.photo.key, class:"avatar", crop: :fill %>

@@ -3,7 +3,7 @@
   display:flex;
   margin-top:50px;
   justify-content:space-around;
-  background-color:#EDEDED;
+  background-color:white;
   margin-left:5%;
   margin-right:5%;
   padding:40px;
@@ -25,6 +25,7 @@
   justify-content: space-between;
   border: 1px solid rgb(237, 234, 234);
 }
+
 .kanban-block{
   .add-task{
     padding:2px 4px;
@@ -93,4 +94,8 @@
     transition: 0.15s;
     background-color:#283975;
   }
+}
+
+.kanban-block {
+  background-color: white;
 }

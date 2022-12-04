@@ -1,0 +1,19 @@
+<div class="modal fade" id="addUsersModal" tabindex="-1" aria-labelledby="addUsersModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="addUsersModalLabel">Add User</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for [@project,@new_user_project] do |f| %>
+          <%= simple_fields_for :other do |o| %>
+            <%= o.input :email%>
+          <% end %>
+          <%= f.input :project_id, :as => :hidden, :input_html => { :value => @project.id }%>
+          <%= button_to "Send Invite", project_user_projects_path(@project)%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

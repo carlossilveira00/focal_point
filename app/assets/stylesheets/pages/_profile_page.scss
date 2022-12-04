@@ -124,3 +124,32 @@
     }
   }
 }
+
+.icon-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.icon-button:hover {
+  cursor: pointer;
+}
+
+
+.icon-button__badge {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  background: red;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}

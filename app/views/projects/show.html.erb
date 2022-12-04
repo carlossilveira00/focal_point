@@ -1,6 +1,6 @@
 <!-- Div for the product description and carousel with project pictures. -->
 <div>
-  <div class="product-banner">
+  <div class="product-banner" data-controller="modal">
     <div style="width:40%;">
       <div style="display:flex; justify-content:center;margin-bottom:20px;width:500px">
         <!-- Project Owner Photo.-->
@@ -15,6 +15,7 @@
       <div style="word-break:break-word">
         <%= @project.content %>
       </div>
+      <button type="button" class="add-task" data-bs-toggle="modal" data-bs-target="#addUsersModal" data-bs-whatever="@mdo"><i class="fa-solid fa-plus"></i></button></strong>
     </div>
     <div id="carousel-<%= @project.id%>" class="carousel slide" data-bs-ride="carousel" style="width:40%;">
       <div class="carousel-inner" style="border-radius:20px;">
@@ -55,6 +56,9 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
+    <!-- MODAL ADD USERS  -->
+    <%= render "projects/shared/add_user_modal" %>
+    <!-- MODAL ADD USERS  -->
   </div>
 
   <div class="board" data-controller="sortable modal">
@@ -130,9 +134,13 @@
             <%= f.input :title %>
             <%= f.input :description, :as => :text, :input_html => { 'rows' => 5, 'cols' => 10 } %>
             <%= f.input :priority, as: :numeric %>
-            <%= f.input :status, collection: ["To-Do", "Unassigned", "Completed", "In progress", "Next Meeting" ] %>
+            <%= f.input :status, collection: ["Next Meeting","Unassigned","To-Do", "In progress", "Completed" ] %>
+            <%= f.input :user_id,
+            collection: @users.map{|user| [user.id, "#{user.first_name} #{user.last_name}"]},
+            value_method: :first,
+            label_method: :second
+            %>
             <%= f.input :project_id, :as => :hidden, :input_html => { :value => @project.id }%>
-            <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id }%>
             <%= button_to "Create Task", project_task_create_path(@project)%>
           <% end %>
         </div>
@@ -160,4 +168,23 @@
     </div>
   </div>
   <!-- MODAL TASK  -->
+  <!-- MODAL ADD USERS  -->
+  <div class="modal fade" id="addUsersModal" tabindex="-1" aria-labelledby="addUsersModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="addUsersModalLabel">Add User</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <%= simple_form_for [@project,@new_user_project] do |f| %>
+            <%= f.input :user_id %>
+            <%= f.input :project_id, :as => :hidden, :input_html => { :value => @project.id }%>
+            <%= button_to "Add User", project_user_projects_path(@project)%>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL ADD USERS  -->
 </div>

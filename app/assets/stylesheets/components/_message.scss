@@ -4,6 +4,10 @@
 }
 
 // To style the message itself
+.title-chat {
+
+}
+
 .sender-style, .receiver-style {
   width: 70%;
   max-width: 400px;
@@ -13,9 +17,20 @@
 }
 
 .sender-style {
-  background-color: lightcoral;
+  background-color: #3D54A0;
+  color: white;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 7px;
 }
 
 .receiver-style {
-  background-color: lightblue;
+  background-color: #edeaea;
+  color: black;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 7px;
+}
+
+.btn-send {
+  background-color: #3D54A0;
+  color: white;
 }

@@ -16,9 +16,10 @@
     background-color: white;
     .ticket-title {
       border-radius: 10px;
-      background-color: #364B92;
-      color: white;
+      background-color: #d9d9d9;
+      color: rgb(0, 0, 0);
       padding: 3px;
+      font-weight: bolder;
       padding-left: 15px;
       padding-right: 15px;
     }
@@ -47,6 +48,7 @@
   .btn-table {
     border-radius: 10px;
     padding-top: 15px;
+    padding-bottom: 12px;
     padding-left: 15px;
   }
   .btn-table:hover {

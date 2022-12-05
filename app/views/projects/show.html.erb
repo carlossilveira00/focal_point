@@ -2,7 +2,7 @@
 <div>
   <div class="product-banner" data-controller="modal">
     <div style="width:40%;">
-      <div style="display:flex; justify-content:center;margin-bottom:20px;width:500px">
+      <div style="display:flex; justify-content:center;margin-bottom:20px;width:500px;align-items:center">
         <!-- Project Owner Photo.-->
         <% project_user = User.find(@project.user_id)%>
         <%if project_user.photo.attached?%>
@@ -15,7 +15,6 @@
       <div style="word-break:break-word">
         <%= @project.content %>
       </div>
-      <button type="button" class="add-task" data-bs-toggle="modal" data-bs-target="#addUsersModal" data-bs-whatever="@mdo"><i class="fa-solid fa-plus"></i></button></strong>
     </div>
     <div id="carousel-<%= @project.id%>" class="carousel slide" data-bs-ride="carousel" style="width:40%;">
       <div class="carousel-inner" style="border-radius:20px;">
@@ -56,7 +55,73 @@
     <!-- MODAL ADD USERS  -->
     <%= render "projects/shared/add_user_modal" %>
     <!-- MODAL ADD USERS  -->
+    <% if @project.user_id == current_user.id %>
+          <div class="project-actions">
+              <%= link_to project_path(@project), class:"btn-action", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                <i class="fa-solid fa-trash fa-lg"></i>
+              <%end%>
+              <%= link_to edit_project_path(@project), class:"btn-action" do %>
+                <i class="fa-solid fa-pen-to-square fa-lg"></i>
+              <%end%>
+          </div>
+        <% end %>
   </div>
+  <!-- Users Profile Pictures Carousel
+  <div class="text-center">
+    <div id="userCarouselSlidesOnly" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+      <% @users.each_with_index do |user, index| %>
+        <% if index == 0%>
+          <% if user.photo.attached? %>
+            <div class="carousel-item active col-4">
+              <%= cl_image_tag user.photo.key, class:"avatar", crop: :fill %>
+            </div>
+          <% else%>
+            <div class="carousel-item active col-4">
+              <img class="avatar" style="height:50px; width:50px;" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
+            </div>
+          <% end %>
+        <% else %>
+          <% if user.photo.attached? %>
+            <div class="carousel-item col-4">
+              <%= cl_image_tag user.photo.key, class:"avatar", crop: :fill %>
+            </div>
+          <% else%>
+            <div class="carousel-item col-4">
+              <img class="avatar" style="height:50px; width:50px;" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- USER AVATAR CAROUSEL -->
+  <div class="avatar-carousel">
+    <div class="wrapper">
+      <button class="prev" id="prevSlide" type="button">➤</button>
+      <div class="slider">
+        <% @users.each_with_index do |user, index| %>
+          <% if user.photo.attached? %>
+            <div class="item">
+              <%= cl_image_tag user.photo.key, class:"avatar", style:"height:50px; width:50px;", crop: :fill %>
+              <div class="title"><%= user.first_name%> <%= user.last_name%></div>
+            </div>
+          <% else%>
+            <div class="item">
+              <img class="avatar" style="height:50px; width:50px;" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
+              <div class="title"><%= user.first_name%> <%= user.last_name%></div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <button class="next" id="nextSlide" type="button">➤</button>
+    </div>
+    <button type="button" style="margin-left:47%" id="add-users" class="btn" data-bs-toggle="modal" data-bs-target="#addUsersModal" data-bs-whatever="@mdo">Add Users</button></strong>
+  </div>
+  <!-- USER AVATAR CAROUSEL -->
+
 
   <div class="board" data-controller="sortable modal">
     <div class="kanban-block text-center">
@@ -69,6 +134,7 @@
           <% if task.status == "Next Meeting"%>
             <a id="link" data-bs-toggle="modal" data-bs-target="#task<%=task.id%>Modal"><%= render "projects/shared/task", task: task %></a>
             <%= render "projects/shared/task_modal", task: task %>
+            <%= render "projects/shared/edit_task_modal", task: task %>
           <% end %>
         <% end %>
       </div>
@@ -83,6 +149,7 @@
           <% if task.status == "Unassigned"%>
             <a id="link" data-bs-toggle="modal" data-bs-target="#task<%=task.id%>Modal"><%= render "projects/shared/task", task: task %></a>
             <%= render "projects/shared/task_modal", task: task %>
+            <%= render "projects/shared/edit_task_modal", task: task %>
           <% end %>
         <% end %>
       </div>
@@ -97,6 +164,7 @@
           <% if task.status == "To-Do"%>
             <a id="link" data-bs-toggle="modal" data-bs-target="#task<%=task.id%>Modal"><%= render "projects/shared/task", task: task %></a>
             <%= render "projects/shared/task_modal", task: task %>
+            <%= render "projects/shared/edit_task_modal", task: task %>
           <% end %>
         <% end %>
       </div>
@@ -111,6 +179,7 @@
           <% if task.status == "In progress"%>
             <a id="link" data-bs-toggle="modal" data-bs-target="#task<%=task.id%>Modal"><%= render "projects/shared/task", task: task %></a>
             <%= render "projects/shared/task_modal", task: task %>
+            <%= render "projects/shared/edit_task_modal", task: task %>
           <% end %>
         <% end %>
       </div>
@@ -125,13 +194,11 @@
           <% if task.status == "Completed"%>
             <a id="link" data-bs-toggle="modal" data-bs-target="#task<%=task.id%>Modal"><%= render "projects/shared/task", task: task %></a>
             <%= render "projects/shared/task_modal", task: task %>
+            <%= render "projects/shared/edit_task_modal", task: task %>
           <% end %>
         <% end %>
       </div>
     </div>
-  </div>
-  <div class="create-ticket">
-  <%= link_to "Create Ticket", new_project_ticket_path(@project.id), class:"btn text-center", style:"margin-right:5%;" %>
   </div>
   <!-- MODAL FORM  -->
   <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
@@ -180,6 +247,8 @@
     </div>
   </div>
   <!-- MODAL TASK  -->
+
+
   <!-- MODAL ADD USERS  -->
   <div class="modal fade" id="addUsersModal" tabindex="-1" aria-labelledby="addUsersModalLabel" aria-hidden="true">
     <div class="modal-dialog">

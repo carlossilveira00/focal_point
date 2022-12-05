@@ -8,6 +8,24 @@
   margin-right:5%;
   padding:40px;
   border-radius: 5px;
+
+}
+
+.project-actions{
+  position: absolute;
+  margin-top: -40px;
+  margin-left: 75%;
+  padding:10px;
+  text-decoration: none;
+
+  .btn-action{
+    color:#364B92;
+    margin: 0 5px;
+  }
+
+  a{
+    text-decoration: none;
+  }
 }
 
 .board{
@@ -185,4 +203,77 @@
 
 .kanban-block {
   background-color: white;
+}
+
+
+.avatar-carousel{
+
+  #add-users{
+    background-color: #364B92;
+    color: white;
+    border-radius: 10px;
+  }
+
+  #add-users:hover{
+    background: #283975;
+    transition: 0.15s;
+    color: white;
+  }
+
+  .wrapper {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+  }
+  .slider {
+    max-width: 45%;
+    height: 10rem;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+  }
+
+  .item{
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .item .title {
+    width:200px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .item img {
+    height: 14rem;
+  }
+
+  .next,
+  .prev {
+    font-family: monospace;
+    font-size: 1.5rem;
+    background: none;
+    border: 0px;
+    cursor: pointer;
+    display: flex;
+    color: rgba(100,100,100, 0.5);
+  }
+  .prev{
+    transform: rotate(-180deg);
+  }
+  .next:hover{
+    text-shadow: 2px 2px 2px rgb(200,200,200);
+  }
+  .prev:hover{
+    text-shadow: 2px -2px 2px rgb(200,200,200);
+  }
+
+  .item {
+    flex: 1 0 25%;
+    text-align: center;
+  }
+
 }

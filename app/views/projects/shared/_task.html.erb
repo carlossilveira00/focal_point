@@ -4,6 +4,6 @@
     <%if task_user.photo.attached?%>
         <%= cl_image_tag task_user.photo.key, class:"avatar", crop: :fill %>
     <% else %>
-      <img class="avatar" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
+      <img class="avatar" style="height:50px; width:50px;" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
     <% end %>
 </div>

@@ -1,30 +1,28 @@
 <div class="edit-card my-4">
-  <h2 class='text-center'>Edit Project</h2>
+  <h2 class='text-center'>Update Project</h2>
 
   <%= simple_form_for @project do |f| %>
     <%= f.error_notification %>
 
     <div class="form-inputs">
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-      <% end %>
-      <%= f.input :name,
-                  autofocus: true,
-                  input_html: { autocomplete: "name" }%>
-      <%= f.input :description,
-                  autofocus: true,
-                  input_html: { autocomplete: "description" }%>
-      <%= f.input :photos,
-                  autofocus: true,
-                  as: :file, input_html: { multiple: true } %>
+      <div class="field">
+        <%= f.input :name,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "name" }%>
+        <%= f.rich_text_area :content,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "description" }%>
+        <%= f.input :photos,
+                    required: false,
+                    autofocus: true,
+                    as: :file, input_html: { multiple: true } %>
+        <p><small>Max of 10M</small><p>
+      </div>
     </div>
-
-    <div class="form-actions text-center margin-top:30px">
-      <input class="btn-log-in" type="submit" value="Update Project">
+    <div class="form-actions text-center">
+      <input class="btn-log-in" type="submit" href="/profile" value="Update Project">
     </div>
   <% end %>
-
-  <div class="text-center">
-    <a class="btn-cancel" type='button' href="url">Delete this project</a>
-  </div>
 </div>

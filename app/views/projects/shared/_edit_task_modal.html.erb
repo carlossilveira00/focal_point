@@ -1,0 +1,26 @@
+    <!-- TASK EDIT MODAL -->
+  <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="editModalLabel">New Task</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <%= simple_form_for [@project,task] do |f| %>
+            <%= f.input :title %>
+            <%= f.input :description, :as => :text, :input_html => { 'rows' => 5, 'cols' => 10 } %>
+            <%= f.input :priority, collection: ["Critical","High","Medium", "Low" ]  %>
+            <%= f.input :status, collection: ["Next Meeting","Unassigned","To-Do", "In progress", "Completed" ] %>
+            <%= f.input :user_id,
+            collection: @users.map{|user| [user.id, "#{user.first_name} #{user.last_name}"]},
+            value_method: :first,
+            label_method: :second
+            %>
+            <%= f.input :project_id, :as => :hidden, :input_html => { :value => @project.id }%>
+            <%= button_to "Update Task", edit_project_task_path(@project), method: :put %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>

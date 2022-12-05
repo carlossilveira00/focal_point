@@ -8,6 +8,24 @@
   margin-right:5%;
   padding:40px;
   border-radius: 5px;
+
+}
+
+.project-actions{
+  position: absolute;
+  margin-top: -40px;
+  margin-left: 75%;
+  padding:10px;
+  text-decoration: none;
+
+  .btn-action{
+    color:#364B92;
+    margin: 0 5px;
+  }
+
+  a{
+    text-decoration: none;
+  }
 }
 
 .board{

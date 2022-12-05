@@ -18,6 +18,7 @@
         </div>
       </div>
       <div class="modal-footer">
+        <button type="button" style="color:#FF5A60;" data-bs-toggle="modal" data-bs-target="#editModal"><i class="fa-solid fa-pen-to-square"></i></button>
         <%= link_to project_task_path(task.id, id: @project.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
           <i class="fa-solid fa-trash" style="color:#FF5A60;"></i>
         <%end%>

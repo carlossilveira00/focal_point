@@ -1,15 +1,21 @@
-<div style="margin-left:130px">
-  <h1 style="margin-top:10px; margin-left:20px"> Ticket </h1>
+<div class="text-center" style="margin-left:40px">
+  <img class="assigned-avatar" style="margin:40px" src="http://res.cloudinary.com/djn023to9/image/upload/c_fill/v1/production/uksu8qrxln8cetj78lk72pglrsz3">
+  <p><%= current_user.first_name %><%= " " %><%= current_user.last_name %></p>
+</div>
+<div style="margin-left:70px">
   <div>
-    <div class="first-card padding-left:100px" style="margin-left:10px; margin-top:15px">
+    <div class="text-left padding-left:50px" style="margin-left:10px; margin-top:15px">
       <div class="card-subject">
-        <div class="user-info d-flex">
-          <img class="assigned-avatar" style="margin:20px" src="http://res.cloudinary.com/djn023to9/image/upload/c_fill/v1/production/uksu8qrxln8cetj78lk72pglrsz3">
-          <h2 style="padding-top:20px;"><%= @ticket.title%></h2>
-        </div>
-        <div class="card-description text-left" style="overflow-y:scroll; border-radius:10px;">
-          <h4 style="padding-top:10px; text-align: center !important;">Description:</h4>
-          <p style="padding-left:2%; padding-right:2%;"><%= @ticket.description%></p>
+        <h2 style="margin-top:10px; margin-left:45px">Ticket</h2>
+        <h1 class="project-name text-center" style="margin-top:-20px"><%= @project.name %></h1>
+        <div>
+          <div class="user-info text-center">
+            <h3 style="padding:20px;"><%= @ticket.title%></h3>
+          </div>
+          <div class="card-description text-left" style="min-height:300px; width:680px; overflow-y:scroll; border-radius:10px;">
+            <h5 style="padding:10px; text-align: left !important;">Description:</h5>
+            <p style="padding-left:2%; padding-right:2%;"><%= @ticket.description%></p>
+          </div>
         </div>
       </div>
     </div>
@@ -32,7 +38,7 @@
                       input_html: { 'rows' => 5, 'cols' => 10}, :input_html => { :class => "comment-box" }  %>
           <%= f.input :ticket_id, :as => :hidden, :input_html => { :value => @ticket.id }%>
           <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id }%>
-          <%= f.button :submit, class:"btn-submit" %>
+          <div style="margin-right:60px;"><%= f.button :submit, class:"btn-submit" %></div>
         <% end %>
       </div>
     </div>

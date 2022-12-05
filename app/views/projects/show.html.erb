@@ -24,9 +24,6 @@
           <% @project.photos.each_with_index do |photo, index|%>
             <!-- If the index is one then the class has to be active. -->
             <% if index == 0 %>
-              <div class="carousel-item active">
-                <%= cl_image_tag photo.key, height: 325, style:"border-radius:20px;", crop: :fill %>
-              </div>
             <% else %>
               <div class="carousel-item ">
                 <%= cl_image_tag photo.key, height: 325, style:"border-radius:20px;", crop: :fill %>

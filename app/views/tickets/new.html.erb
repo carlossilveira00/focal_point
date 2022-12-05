@@ -1,32 +1,31 @@
-<img class="assigned-avatar" style="margin:40px" src="http://res.cloudinary.com/djn023to9/image/upload/c_fill/v1/production/uksu8qrxln8cetj78lk72pglrsz3">
+<div class="text-center" style="margin-left:40px">
+  <img class="assigned-avatar" style="margin:40px" src="http://res.cloudinary.com/djn023to9/image/upload/c_fill/v1/production/uksu8qrxln8cetj78lk72pglrsz3">
+  <p><%= current_user.first_name %><%= " " %><%= current_user.last_name %></p>
+</div>
 <div>
-  <h1 style="margin-top:10px; margin-left:20px">Ticket</h1>
-  <div>
-    <div class="text-center padding-left:50px" style="margin-left:10px; margin-top:15px">
-      <div class="card-subject text-center">
-        <div class="d-flex">
-          <div class= "text-form-ticket"style="padding-top:30px">
+  <div class="text-left" style="margin-left:80px; margin-top:15px">
+    <div class="card-subject">
+      <h2 style="margin-top:10px; margin-left:45px">New Ticket</h2>
+      <h1 class="project-name text-center" style="margin-top:-20px"><%= @project.name %></h1>
+        <div class= "text-form-ticket text-left"style="padding-top:10px">
             <%= simple_form_for [@project,@ticket] do |f| %>
-              <div class="form-title" style="width:980px; margin-left:50px"><%= f.input :title %></div>
-              <div class="form-description" style="width:980px; height: 600px; margin-left:50px">
-                <%= f.input :description,
-                            :as => :text,
-                            :input_html => {
-                               'rows' => 5,
-                               'cols' => 10,
-                               style: 'min-height: 180px; overflow-y:scroll;'
-                            }%>
-              </div>
-              <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id }%>
-              <%= f.input :project_id, :as => :hidden, :input_html => { :value => @project.id }%>
-              <%= f.input :status, :as => :hidden, :input_html => { :value => "Open" }%>
+          <div class="form-title" style="width:680px; margin-left:50px"><%= f.input :title %></div>
+          <div class="form-description" style="width:680px; margin-left:50px">
+            <%= f.input :description,
+                        :as => :text,
+                        :input_html => {
+                        'rows' => 5,
+                        'cols' => 10,
+                        style: 'min-height: 200px; overflow-y:scroll;'
+                        }%>
           </div>
+                <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id }%>
+                <%= f.input :project_id, :as => :hidden, :input_html => { :value => @project.id }%>
+                <%= f.input :status, :as => :hidden, :input_html => { :value => "Open" }%>
+                <div style="margin-right:80px;"><%= f.button :submit, class:"btn-submit" %></div>
+          <% end %>
         </div>
       </div>
-        <div class="form-actions text-right">
-          <%= f.submit %>
-        </div>
-      <% end %>
     </div>
   </div>
 </div>

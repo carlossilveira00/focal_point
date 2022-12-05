@@ -11,9 +11,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item-text active text-center">
             <%= link_to "My Profile", "/profile", class: "nav-link" %>
-          </li>
           <li class="nav-item dropdown">
             <%= image_tag "http://res.cloudinary.com/djn023to9/image/upload/c_fill/v1/production/jxcqdq6bxij38wu60hby65pxklfl", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">

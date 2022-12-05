@@ -2,7 +2,7 @@
 <div>
   <div class="product-banner" data-controller="modal">
     <div style="width:40%;">
-      <div style="display:flex; justify-content:center;margin-bottom:20px;width:500px">
+      <div style="display:flex; justify-content:center;margin-bottom:20px;width:500px;align-items:center">
         <!-- Project Owner Photo.-->
         <% project_user = User.find(@project.user_id)%>
         <%if project_user.photo.attached?%>
@@ -59,6 +59,16 @@
     <!-- MODAL ADD USERS  -->
     <%= render "projects/shared/add_user_modal" %>
     <!-- MODAL ADD USERS  -->
+    <% if @project.user_id == current_user.id %>
+          <div class="project-actions">
+              <%= link_to project_path(@project), class:"btn-action", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                <i class="fa-solid fa-trash fa-lg"></i>
+              <%end%>
+              <%= link_to edit_project_path(@project), class:"btn-action" do %>
+                <i class="fa-solid fa-pen-to-square fa-lg"></i>
+              <%end%>
+          </div>
+        <% end %>
   </div>
 
   <div class="board" data-controller="sortable modal">
@@ -72,6 +82,7 @@
           <% if task.status == "Next Meeting"%>
             <a id="link" data-bs-toggle="modal" data-bs-target="#task<%=task.id%>Modal"><%= render "projects/shared/task", task: task %></a>
             <%= render "projects/shared/task_modal", task: task %>
+            <%= render "projects/shared/edit_task_modal", task: task %>
           <% end %>
         <% end %>
       </div>
@@ -86,6 +97,7 @@
           <% if task.status == "Unassigned"%>
             <a id="link" data-bs-toggle="modal" data-bs-target="#task<%=task.id%>Modal"><%= render "projects/shared/task", task: task %></a>
             <%= render "projects/shared/task_modal", task: task %>
+            <%= render "projects/shared/edit_task_modal", task: task %>
           <% end %>
         <% end %>
       </div>
@@ -100,6 +112,7 @@
           <% if task.status == "To-Do"%>
             <a id="link" data-bs-toggle="modal" data-bs-target="#task<%=task.id%>Modal"><%= render "projects/shared/task", task: task %></a>
             <%= render "projects/shared/task_modal", task: task %>
+            <%= render "projects/shared/edit_task_modal", task: task %>
           <% end %>
         <% end %>
       </div>
@@ -114,6 +127,7 @@
           <% if task.status == "In progress"%>
             <a id="link" data-bs-toggle="modal" data-bs-target="#task<%=task.id%>Modal"><%= render "projects/shared/task", task: task %></a>
             <%= render "projects/shared/task_modal", task: task %>
+            <%= render "projects/shared/edit_task_modal", task: task %>
           <% end %>
         <% end %>
       </div>
@@ -128,6 +142,7 @@
           <% if task.status == "Completed"%>
             <a id="link" data-bs-toggle="modal" data-bs-target="#task<%=task.id%>Modal"><%= render "projects/shared/task", task: task %></a>
             <%= render "projects/shared/task_modal", task: task %>
+            <%= render "projects/shared/edit_task_modal", task: task %>
           <% end %>
         <% end %>
       </div>
@@ -183,6 +198,8 @@
     </div>
   </div>
   <!-- MODAL TASK  -->
+
+
   <!-- MODAL ADD USERS  -->
   <div class="modal fade" id="addUsersModal" tabindex="-1" aria-labelledby="addUsersModalLabel" aria-hidden="true">
     <div class="modal-dialog">

@@ -1,14 +1,14 @@
-<div style="margin-left:100px">
+<img class="assigned-avatar" style="margin:40px" src="http://res.cloudinary.com/djn023to9/image/upload/c_fill/v1/production/uksu8qrxln8cetj78lk72pglrsz3">
+<div>
   <h1 style="margin-top:10px; margin-left:20px">Ticket</h1>
   <div>
-    <div class="text-center padding-left:100px" style="margin-left:10px; margin-top:15px">
+    <div class="text-center padding-left:50px" style="margin-left:10px; margin-top:15px">
       <div class="card-subject text-center">
         <div class="d-flex">
-          <img class="assigned-avatar" style="margin:30px" src="http://res.cloudinary.com/djn023to9/image/upload/c_fill/v1/production/uksu8qrxln8cetj78lk72pglrsz3">
           <div class= "text-form-ticket"style="padding-top:30px">
             <%= simple_form_for [@project,@ticket] do |f| %>
-              <div class="form-title" style="width:900px"><%= f.input :title %></div>
-              <div class="form-description" style="width:980px; height: 600px; margin-left:-80px">
+              <div class="form-title" style="width:980px; margin-left:50px"><%= f.input :title %></div>
+              <div class="form-description" style="width:980px; height: 600px; margin-left:50px">
                 <%= f.input :description,
                             :as => :text,
                             :input_html => {

@@ -1,0 +1,38 @@
+.modal-body{
+  p{
+    text-align: left;
+    max-width: 100%;
+    white-space: initial;
+  }
+}
+
+
+.modal{
+  .tag-critical{
+    box-shadow: 0px 0px 20px -6px rgba(239,117,100, 0.8);
+  }
+
+  .tag-high{
+    box-shadow: 0px 0px 20px -6px rgba(255,175,63, 0.8);
+  }
+
+  .tag-medium{
+    box-shadow: 0px 0px 20px -6px rgba(245,221,41, 0.8);
+  }
+
+  .tag-low{
+    box-shadow: 0px 0px 20px -6px rgba(123,200,108, 0.8);
+  }
+
+  #edit-task{
+    color:#364B92;
+    border: none;
+    background-color: white;
+  }
+
+  #delete-task{
+    color:#364B92;
+    border: none;
+    background-color: white;
+  }
+}

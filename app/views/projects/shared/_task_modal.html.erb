@@ -1,12 +1,12 @@
 <div class="modal fade" id="task<%=task.id%>Modal" tabindex="-1" aria-labelledby="task<%=task.id%>ModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-content tag-<%=task.priority.downcase%>">
       <div class="modal-header">
-        <h4 class="modal-title" id="task<%=task.id%>ModalLabel"><%=task.title%>  <span class="tag-<%=task.priority.downcase%>"><i class="fa-solid fa-circle"></i> <%=task.priority%></span></h4>
+        <h3 class="modal-title" id="task<%=task.id%>ModalLabel"><%=task.title%>  <span class="tag-<%=task.priority.downcase%>"><i class="fa-solid fa-circle"></i> <%=task.priority%></span></h3>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p><strong>Description:</strong><%=task.description%></p>
+        <p><strong>Description: </strong><%=task.description%></p>
         <div style="display:flex;align-items:center;">
           <h6 style="margin-right:20px;margin-bottom:0px;"><strong style="margin-right:10px;">Assigned to:</strong> <%= User.find(task.user_id).first_name%> <%= User.find(task.user_id).last_name%></h6>
           <% task_user = User.find(task.user_id)%>
@@ -18,9 +18,9 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" style="color:#FF5A60;" data-bs-toggle="modal" data-bs-target="#editModal"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button type="button" id = "edit-task" data-bs-toggle="modal" data-bs-target="#editModal"><i class="fa-solid fa-pen-to-square"></i></button>
         <%= link_to project_task_path(task.id, id: @project.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-          <i class="fa-solid fa-trash" style="color:#FF5A60;"></i>
+          <i class="fa-solid fa-trash" id="delete-task"></i>
         <%end%>
       </div>
     </div>

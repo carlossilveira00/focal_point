@@ -3,6 +3,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
+# Group SQL by day/week/hour
+gem "groupdate"
+
+# Gem for Chartkick
+gem "chartkick"
+
 # Gemfile for cloudinary
 gem "cloudinary"
 

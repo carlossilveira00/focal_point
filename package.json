@@ -8,6 +8,8 @@
     "@rails/actioncable": "^7.0.4",
     "@rails/actiontext": "^7.0.4",
     "bootstrap": "^5.2.3",
+    "chart.js": "^4.0.1",
+    "chartkick": "^4.2.0",
     "sortablejs": "^1.15.0",
     "trix": "^2.0.2",
     "webpack": "^5.75.0",

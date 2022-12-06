@@ -11,6 +11,7 @@ import "@rails/actiontext"
 
 import "trix"
 import "@rails/actiontext"
+import "chartkick/chart.js"
 
 
 const prevSlideButton = document.getElementById("prevSlide");

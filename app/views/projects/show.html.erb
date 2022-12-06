@@ -220,7 +220,7 @@
             label_method: :second
             %>
             <%= f.input :project_id, :as => :hidden, :input_html => { :value => @project.id }%>
-            <%= button_to "Create Task", project_task_create_path(@project)%>
+            <%= button_to "Create Task", project_task_create_path(@project), id:"btn-create-task"%>
           <% end %>
         </div>
       </div>

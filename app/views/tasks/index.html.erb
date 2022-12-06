@@ -67,7 +67,7 @@
           <h1 class="modal-title fs-5" id="formModalLabel">New Task</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" style="text-center">
           <%= simple_form_for [@project,@new_task] do |f| %>
             <%= f.input :title %>
             <%= f.input :description, :as => :text, :input_html => { 'rows' => 5, 'cols' => 10 } %>
@@ -75,7 +75,7 @@
             <%= f.input :status, collection: ["To-Do", "Unassigned", "Completed", "In progress", "Next Meeting" ] %>
             <%= f.input :project_id, :as => :hidden, :input_html => { :value => @project.id }%>
             <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id }%>
-            <%= button_to "Create Task", project_task_create_path(@project)%>
+            <%= button_to "Create Task", project_task_create_path(@project), id:"btn-create-task"%>
           <% end %>
         </div>
       </div>

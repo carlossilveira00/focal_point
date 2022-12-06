@@ -45,16 +45,6 @@
         </a>
       </li>
       <li class="has-subnav">
-        <%if @project.nil?%>
-          <a href="">
-        <% else%>
-          <a href="/projects/<%=@project.id%>/tickets/new">
-        <%end%>
-          <i class="fa-solid fa-square-plus"></i>
-          <span class="nav-text">Create Ticket</span>
-        </a>
-      </li>
-      <li class="has-subnav">
         <a href="/">
           <i class="fa-solid fa-chart-line"></i>
           <span class="nav-text">Performace Analysis</span>

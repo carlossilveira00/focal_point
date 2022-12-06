@@ -3,28 +3,26 @@
   <p><%= current_user.first_name %><%= " " %><%= current_user.last_name %></p>
 </div>
 <div class="ticket-all">
-  <div class="text-left" style="margin-left:80px; margin-top:15px">
-    <div class="card-subject">
+  <div class="card-subject" style="margin-left:80px; margin-top:15px">
       <h2 style="margin-top:10px; margin-left:45px">New Ticket</h2>
       <h1 class="project-name text-center" style="margin-top:-20px"><%= @project.name %></h1>
-        <div class= "text-form-ticket text-left"style="padding-top:10px">
-            <%= simple_form_for [@project,@ticket] do |f| %>
-          <div class="form-title" style="width:680px; margin-left:50px"><%= f.input :title %></div>
-          <div class="form-description" style="width:680px; margin-left:50px">
-            <%= f.input :description,
-                        :as => :text,
-                        :input_html => {
-                        'rows' => 5,
-                        'cols' => 10,
-                        style: 'min-height: 200px; overflow-y:scroll;'
-                        }%>
-          </div>
+      <div class= "text-form-ticket text-left"style="padding-top:10px">
+          <%= simple_form_for [@project,@ticket] do |f| %>
+        <div class="form-title" style="width:680px; margin-left:50px"><%= f.input :title %></div>
+        <div class="form-description" style="width:680px; margin-left:50px">
+          <%= f.input :description,
+                      :as => :text,
+                      :input_html => {
+                      'rows' => 5,
+                      'cols' => 10,
+                      style: 'min-height: 200px; overflow-y:scroll;'
+                      }%>
+        </div>
                 <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id }%>
                 <%= f.input :project_id, :as => :hidden, :input_html => { :value => @project.id }%>
                 <%= f.input :status, :as => :hidden, :input_html => { :value => "Open" }%>
                 <div style="margin-right:200px; margin-top:25px"><%= f.button :submit, class:"btn-submit" %></div>
-          <% end %>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>

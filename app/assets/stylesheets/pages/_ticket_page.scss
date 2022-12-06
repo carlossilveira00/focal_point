@@ -60,3 +60,11 @@
   background-color:#283975;
   color: white;
 }
+
+#ticket_title {
+  width: 163%;
+}
+#ticket_description {
+  width: 163%;
+  overflow-y: scroll;
+}

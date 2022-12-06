@@ -7,7 +7,7 @@
     <p class="ticket-title" style="">Status</p>
     <p class="ticket-title" style="margin-right:15px">Comments</p>
   </div>
-  <div class="info-row">
+  <div>
   <!-- Ticket info  -->
     <% @tickets.each do |ticket|%>
       <%= render "tickets/shared/ticket_row", ticket: ticket%>

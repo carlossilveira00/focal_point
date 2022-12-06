@@ -22,7 +22,7 @@
                 <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id }%>
                 <%= f.input :project_id, :as => :hidden, :input_html => { :value => @project.id }%>
                 <%= f.input :status, :as => :hidden, :input_html => { :value => "Open" }%>
-                <div style="margin-right:80px;"><%= f.button :submit, class:"btn-submit" %></div>
+                <div style="margin-right:200px; margin-top:25px"><%= f.button :submit, class:"btn-submit" %></div>
           <% end %>
         </div>
       </div>

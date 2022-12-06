@@ -38,7 +38,7 @@
                       input_html: { 'rows' => 5, 'cols' => 10}, :input_html => { :class => "comment-box" }  %>
           <%= f.input :ticket_id, :as => :hidden, :input_html => { :value => @ticket.id }%>
           <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id }%>
-          <div style="margin-right:60px;"><%= f.button :submit, class:"btn-submit" %></div>
+          <div style="margin-right:80px;"><%= f.button :submit, class:"btn-submit" %></div>
         <% end %>
       </div>
     </div>

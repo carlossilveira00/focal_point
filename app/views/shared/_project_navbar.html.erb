@@ -8,7 +8,7 @@
   </div>
   <div class="image-user">
       <%if current_user.photo.attached?%>
-      <%= cl_image_tag current_user.photo.key, class: "avatar-each-task", style: "margin-top:4px;", crop: :fill %>
+      <%= cl_image_tag current_user.photo.key, class: "avatar-each-task", style: "margin-top:4px; margin-right: 13px;", crop: :fill %>
       <% else %>
       <img class="avatar-each-task" style="height:50px; width:50px; border-radius:50%" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
       <% end %>

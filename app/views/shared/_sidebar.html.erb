@@ -2,14 +2,14 @@
   <ul class="upper-btns">
     <%if @project.nil?%>
       <li>
-        <a href="/">
+        <a href="/profile">
           <i class="fa-solid fa-house"></i>
           <span class="nav-text">Home Page</span>
         </a>
       </li>
     <% else%>
       <li>
-        <a href="/">
+        <a href="/profile">
           <i class="fa-solid fa-house"></i>
           <span class="nav-text">Home Page</span>
         </a>
@@ -75,16 +75,10 @@
         <a href="">
       <% else%>
         <a href="/projects/<%=@project.id%>/chatrooms/<%= @project.chatroom_id%>">
-      <%end%>
         <i class="fa-solid fa-comment"></i>
         <span class="nav-text">Chat</span>
       </a>
-    </li>
-    <li>
-      <a href="/profile">
-        <i class="fa-solid fa-user"></i>
-        <span class="nav-text">Profile</span>
-      </a>
+      <%end%>
     </li>
     <li>
       <% if user_signed_in? %>

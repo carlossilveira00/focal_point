@@ -36,3 +36,33 @@
     background-color: white;
   }
 }
+
+
+#accept-button{
+  border:none;
+  width:90px;
+  background: #3D54A0;
+  color: white;
+  align-content: center;
+  border-radius: 10px;
+  box-shadow: rgba(127, 127, 127, 0.2) 1px 5px 10px 1px;
+}
+
+#accept-button:hover{
+  background-color: #283975;
+}
+
+
+#decline-button{
+  border:none;
+  width:90px;
+  background: #959595;
+  color: white;
+  align-content: center;
+  border-radius: 10px;
+  box-shadow: rgba(127, 127, 127, 0.2) 1px 5px 10px 1px;
+}
+
+#decline-button:hover{
+  background: #d5d4d4;
+}

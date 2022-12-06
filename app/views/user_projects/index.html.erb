@@ -53,13 +53,6 @@
         <% project = Project.find(participation.project_id) %>
         <a href="/projects/<%= project.id%>" style="text-decoration:none;">
           <div class="btn-table table-info d-flex justify-content-between text-center my-5" >
-            <!-- Project Owner Photo -->
-            <% project_user = User.find(project.user_id) %>
-            <%if project_user.photo.attached?%>
-              <%= cl_image_tag project_user.photo.key, class:"avatar", style:"height:55px; width:55px", crop: :fill %>
-            <% else %>
-              <img class="avatar" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" style="height:55px; width:55px">
-            <% end %>
             <p style="width:120px; margin-top:15px;"><%= project.name%></p>
             <p style="width:120px; margin-top:15px;">Developer</p>
             <p style="width:120px; margin-top:15px;">On Going</p>
@@ -83,11 +76,11 @@
               </div>
               <div class="modal-body">
                 <% @invitations.each do |invitation|%>
-                  <div style="display:flex;">
-                    <p><%= User.find(invitation.user_id).first_name%> <%= User.find(invitation.user_id).last_name%> invited you to:<p>
-                    <h6><%= Project.find(invitation.project_id).name%></h6>
-                    <%= button_to "Accept", project_user_project_accept_path(invitation.project_id, invitation), method: :patch %>
-                    <%= button_to "Decline", project_user_project_decline_path(invitation.project_id, invitation), method: :patch %>
+                  <% project = Project.find(invitation.project_id)%>
+                  <div style="display:flex;justify-content: space-between;">
+                    <p><strong><%= User.find(project.user_id).first_name%> <%= User.find(project.user_id).last_name%></strong> invited you to: <%= Project.find(invitation.project_id).name%><p>
+                    <%= button_to "Accept", project_user_project_accept_path(invitation.project_id, invitation),id:"accept-button", method: :patch %>
+                    <%= button_to "Decline", project_user_project_decline_path(invitation.project_id, invitation),id:"decline-button", method: :patch %>
                   </div>
                 <%end%>
               </div>

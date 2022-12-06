@@ -1,0 +1,4 @@
+<div class="task priority-<%= task.priority.downcase%>" id="<%= set_task_status_project_url(task_id: task.id, id: @project.id) %>" >
+  <em style="margin:0; max-width:150px;white-space:initial;"><%= task.title%></em>
+    <% task_user = User.find(task.user_id)%>
+</div>

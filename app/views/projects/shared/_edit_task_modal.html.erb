@@ -18,7 +18,7 @@
             label_method: :second
             %>
             <%= f.input :project_id, :as => :hidden, :input_html => { :value => @project.id }%>
-            <%= button_to "Update Task", edit_project_task_path(@project), method: :put %>
+            <%= button_to "Update Task", edit_project_task_path(@project), id:"btn-update-task", method: :put %>
           <% end %>
         </div>
       </div>

@@ -1,0 +1,13 @@
+<% if @project.nil?%>
+<%else%>
+<div class="product-navbar d-flex">
+  <div class="align-items-center d-flex project-name" >
+    <a href="/project/<%=@project.id%>"><p>
+      <%= @project.name %>
+    </p></a>
+  </div>
+  <div class="image-user">
+    <img class="avatar" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+  </div>
+</div>
+<%end%>

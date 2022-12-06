@@ -17,14 +17,14 @@
         <%= yield %>
         <%= render "shared/footer" %>
       <%else%>
-      <div>
-        <div class="page-container d-flex">
-          <%= render "shared/sidebar" %>
-          <%= yield %>
+        <div>
+          <%= render "shared/project_navbar" %>
+          <div class="page-container d-flex">
+            <%= render "shared/sidebar" %>
+            <%= yield %>
+          </div>
+          <%= render "shared/footer" %>
         </div>
-        <%= render "shared/footer" %>
-      </div>
       <% end %>
-
   </body>
 </html>

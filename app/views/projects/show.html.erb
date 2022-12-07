@@ -1,3 +1,8 @@
+<% content_for :meta_title, "#{@project.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @project.content %>
+<% content_for :meta_image, cl_image_path(@project.photos.path) if @project.photos.present? %>
+
+
 <!-- Div for the product description and carousel with project pictures. -->
 <div>
   <button type="button" class="btn btn-warning" id="toggle-btn">Project Details <i class="fa-solid fa-arrow-down"></i></button>

@@ -58,6 +58,8 @@
   </ul>
 
   <ul class="lower-btns">
+    <% if @project.nil? || @project.id.nil?%>
+    <%else%>
     <li>
       <a href="#">
         <i class="fa-solid fa-magnifying-glass"></i>
@@ -74,6 +76,7 @@
         <span class="nav-text">Chat</span>
       </a>
     </li>
+    <%end%>
     <li>
       <% if user_signed_in? %>
         <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" do %>

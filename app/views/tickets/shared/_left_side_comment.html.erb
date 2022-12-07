@@ -6,7 +6,7 @@
   <div class="image-user">
     <% user = User.find(comment.user_id)%>
     <%if user.photo.attached?%>
-      <%= cl_image_tag user.photo.key, class: "avatar-each-task", style: "margin-top:4px; margin-right: 13px;", crop: :fill %>
+      <%= cl_image_tag user.photo.key, class: "avatar-each-task", style: "margin-top:4px; margin-right: 13px;margin-left:20px;", crop: :fill %>
     <% else %>
       <img class="avatar-each-task" style="height:90px; width:90px; border-radius:50%" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
     <% end %>

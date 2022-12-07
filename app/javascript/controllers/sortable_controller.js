@@ -4,13 +4,13 @@ import Sortable from "sortablejs/modular/sortable.complete.esm"
 // Connects to data-controller="sortable"
 export default class extends Controller {
 
-  static targets = [ "nextmeeting", "unassigned" ,"todo", "inprogress", "completed", "task"]
+  static targets = [ "todiscuss", "unassigned" ,"todo", "inprogress", "completed", "task"]
 
   connect() {
     console.log(this.todoTarget)
     const csrfToken = document.querySelector("meta[name=csrf-token]").getAttribute("content")
 
-    new Sortable(this.nextmeetingTarget, {
+    new Sortable(this.todiscussTarget, {
       group: 'shared', // set both lists to same group
       animation: 150,
       onAdd: function (event) {
@@ -24,7 +24,7 @@ export default class extends Controller {
             "X-CSRF-Token": csrfToken
           },
           body: JSON.stringify(
-            { status: "Next Meeting"
+            { status: "To Discuss"
           })
         })
 

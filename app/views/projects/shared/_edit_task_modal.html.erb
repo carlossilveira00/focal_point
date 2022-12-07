@@ -11,7 +11,7 @@
             <%= f.input :title %>
             <%= f.input :description, :as => :text, :input_html => { 'rows' => 5, 'cols' => 10 } %>
             <%= f.input :priority, collection: ["Critical","High","Medium", "Low" ]  %>
-            <%= f.input :status, collection: ["Next Meeting","Unassigned","To-Do", "In progress", "Completed" ] %>
+            <%= f.input :status, collection: ["To Discuss","Unassigned","To-Do", "In progress", "Completed" ] %>
             <%= f.input :user_id,
             collection: @users.map{|user| [user.id, "#{user.first_name} #{user.last_name}"]},
             value_method: :first,

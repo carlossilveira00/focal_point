@@ -34,15 +34,15 @@
     <div class="info-row">
         <!-- Div for project information. -->
         <% @projects.each do |project|%>
-        <a href="/projects/<%= project.id %>" style="text-decoration:none;">
-          <div class="btn-table table-info d-flex justify-content-between text-center my-5" >
-            <!-- Project Owner Photo -->
-            <% project_user = User.find(project.user_id) %>
-            <p style="width:120px; margin-top:15px;"><%= project.name%></p>
-            <p style="width:120px; margin-top:15px;">Manager</p>
-            <p style="width:120px; margin-top:15px;">On Going</p>
-          </div>
-        </a>
+          <%= link_to project_path(project), style: "text-decoration:none;", data: { turbo: false } do %>
+            <div class="btn-table table-info d-flex justify-content-between text-center my-5" >
+              <!-- Project Owner Photo -->
+              <% project_user = User.find(project.user_id) %>
+              <p style="width:120px; margin-top:15px;"><%= project.name%></p>
+              <p style="width:120px; margin-top:15px;">Manager</p>
+              <p style="width:120px; margin-top:15px;">On Going</p>
+            </div>
+          <% end %>
         <% end %>
         <!-- Div for project information. -->
     </div>
@@ -51,13 +51,14 @@
       <!-- Div for project information. -->
       <% @participating_projects.each do |participation|%>
         <% project = Project.find(participation.project_id) %>
-        <a href="/projects/<%= project.id%>" style="text-decoration:none;">
+
+          <%= link_to project_path(project), style: "text-decoration:none;", data: { turbo: false } do %>
           <div class="btn-table table-info d-flex justify-content-between text-center my-5" >
             <p style="width:120px; margin-top:15px;"><%= project.name%></p>
             <p style="width:120px; margin-top:15px;">Developer</p>
             <p style="width:120px; margin-top:15px;">On Going</p>
           </div>
-        </a>
+        <% end %>
       <% end %>
         <!-- Div for project information. -->
     </div>

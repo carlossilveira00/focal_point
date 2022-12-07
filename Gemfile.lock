@@ -83,6 +83,7 @@ GEM
     bindex (0.8.1)
     bootsnap (1.15.0)
       msgpack (~> 1.2)
+    bootstrap-toggle-rails (2.2.1.0)
     builder (3.2.4)
     capybara (3.38.0)
       addressable
@@ -282,6 +283,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootsnap
+  bootstrap-toggle-rails
   capybara
   chartkick
   cloudinary

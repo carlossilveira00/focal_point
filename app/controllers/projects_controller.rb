@@ -27,9 +27,9 @@ class ProjectsController < ApplicationController
     @project.chatroom_id = Chatroom.create(name: @project.name).id
 
     if @project.save
-      redirect_to project_path(@project.id)
+      redirect_to project_path(@project.id), notice: 'Project successfully created.'
     else
-      render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity, notice: 'We were not able to create a new project.'
     end
   end
 

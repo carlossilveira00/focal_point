@@ -6,23 +6,29 @@
 
 
 .banner {
-  padding-top: 180px;
-  padding-bottom: 180px;
+  padding-top: 80px;
+  padding-bottom: 135px;
+  background-color:white;
+
+  .container{
+    width: 38%;
+    padding-top: 12%;
+  }
 
   h1{
-    color: white;
+    color: #283975;
     font-size: 330%;
   }
 
   p{
-    color: white;
+    color: #283975;
     font-size: 140%;
   }
 
   .btn {
     border-radius: 10px;
-    background-color: white;
-    color: #283975;
+    background-color: #283975;
+    color: white;
   }
 
   #btn-scroll-down {
@@ -34,6 +40,7 @@
     background-color: white;
     color: #283975;
     padding: 10px;
+    border: 1px solid #283975;
   }
 
   .info-details {
@@ -95,6 +102,7 @@
 
 .comments-space {
   padding: 60px;
+  padding-bottom: 8%;
 
   .list {
     padding-bottom: 15px;

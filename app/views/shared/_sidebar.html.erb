@@ -64,9 +64,9 @@
         <span class="nav-text">Search</span>
       </a>
     </li>
-    <li>
+    <li class="has-subnav">
       <%if @project.nil?%>
-        <a href="">
+        <a href=" ">
       <% else%>
         <a href="/projects/<%=@project.id%>/chatrooms/<%= @project.chatroom_id%>">
         <i class="fa-solid fa-comment"></i>

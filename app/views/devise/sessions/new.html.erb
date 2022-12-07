@@ -1,5 +1,5 @@
 <div class="login-card my-4">
-  <h2 class='text-center'>Log in</h2>
+  <h2 class="text-center">Log in</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
     <div class="form-inputs">
@@ -11,6 +11,8 @@
                   required: false,
                   input_html: { autocomplete: "current-password" } %>
       <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      <div class="text-center">
+      </div>
     </div>
 
     <div class="form-actions text-center">
@@ -22,7 +24,7 @@
       <input class="btn-log-in-facebook" type='submit' value="Continue with Facebook">
     </div>
     <div>
-    <a class="password-new" href="/users/password/new">Forgot your password?</a>
+      <a class="password-new" href="/users/password/new">Forgot your password?</a>
     </div>
   <% end %>
 </div>

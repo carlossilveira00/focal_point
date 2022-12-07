@@ -11,7 +11,7 @@
             <%= o.input :email%>
           <% end %>
           <%= f.input :project_id, :as => :hidden, :input_html => { :value => @project.id }%>
-          <%= button_to "Send Invite", project_user_projects_path(@project)%>
+          <%= button_to "Send Invite", project_user_projects_path(@project), id:"add-users-button"%>
         <% end %>
       </div>
     </div>

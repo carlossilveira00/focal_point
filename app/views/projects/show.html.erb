@@ -97,12 +97,12 @@
   <div class="board" data-controller="sortable modal" style="margin-top: 9%;">
     <div class="kanban-block text-center">
       <div class="board-title">
-        <p><strong>Next Meeting</strong></p>
+        <p><strong>To Discuss</strong></p>
         <button type="button" class="add-task" data-bs-toggle="modal" data-bs-target="#formModal" data-bs-whatever="@mdo"><i class="fa-solid fa-plus"></i></button>
       </div>
-      <div id="nextmeeting" data-sortable-target="nextmeeting" style="margin-top:20px">
+      <div id="todiscuss" data-sortable-target="todiscuss" style="margin-top:20px">
         <% @tasks.each do |task|%>
-          <% if task.status == "Next Meeting"%>
+          <% if task.status == "To Discuss"%>
             <a id="link" data-bs-toggle="modal" data-bs-target="#task<%=task.id%>Modal"><%= render "projects/shared/task_without_user", task: task %></a>
             <%= render "projects/shared/task_modal_without_user", task: task %>
             <%= render "projects/shared/edit_task_modal", task: task %>
@@ -184,7 +184,7 @@
             <%= f.input :title %>
             <%= f.input :description, :as => :text, :input_html => { 'rows' => 5, 'cols' => 10 } %>
             <%= f.input :priority, collection: ["Critical","High","Medium", "Low" ]  %>
-            <%= f.input :status, collection: ["Next Meeting","Unassigned","To-Do", "In progress", "Completed" ] %>
+            <%= f.input :status, collection: ["To Discuss","Unassigned","To-Do", "In progress", "Completed" ] %>
             <%= f.input :user_id,
             collection: @users.map{|user| [user.id, "#{user.first_name} #{user.last_name}"]},
             value_method: :first,

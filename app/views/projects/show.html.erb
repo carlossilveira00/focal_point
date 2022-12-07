@@ -1,127 +1,100 @@
 <!-- Div for the product description and carousel with project pictures. -->
 <div>
-  <div class="product-banner"data-controller="modal" style= "box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;">
-    <div style="width:40%;">
-      <div style="display:flex; justify-content:center;margin-bottom:20px;width:500px;align-items:center">
-        <!-- Project Owner Photo.-->
-        <% project_user = User.find(@project.user_id)%>
-        <h1 style="word-break: break-word;margin-right:100px;"><%= @project.name%></h1>
+  <button type="button" class="btn btn-warning" id="toggle-btn">Project Details <i class="fa-solid fa-arrow-down"></i></button>
+  <div id="toggle-example">
+    <div class="product-banner" data-controller="modal" style= "box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;">
+      <div style="width:40%;">
+        <div style="display:flex; justify-content:center;margin-bottom:20px;width:500px;align-items:center">
+          <!-- Project Owner Photo.-->
+          <% project_user = User.find(@project.user_id)%>
+          <h1 style="word-break: break-word;margin-right:100px;"><%= @project.name%></h1>
+        </div>
+        <div style="word-break:break-word">
+          <%= @project.content %>
+        </div>
+          <!-- USER AVATAR CAROUSEL -->
+        <div class="avatar-carousel">
+          <div class="wrapper">
+            <button class="prev" id="prevSlide" type="button">➤</button>
+            <div class="slider">
+              <% @users.each_with_index do |user, index| %>
+                <% if user.photo.attached? %>
+                  <div class="item">
+                    <%= cl_image_tag user.photo.key, class:"avatar", style:"height:50px; width:50px;", crop: :fill %>
+                    <div class="title"><%= user.first_name%> <%= user.last_name%></div>
+                  </div>
+                <% else%>
+                  <div class="item">
+                    <img class="avatar" style="height:50px; width:50px;" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
+                    <div class="title"><%= user.first_name%> <%= user.last_name%></div>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+            <button class="next" id="nextSlide" type="button">➤</button>
+          </div>
+          <button type="button" style="margin-left:20%" id="add-users" class="btn" data-bs-toggle="modal" data-bs-target="#addUsersModal" data-bs-whatever="@mdo">Add Users</button></strong>
+        </div>
+  <!-- USER AVATAR CAROUSEL -->
       </div>
-      <div style="word-break:break-word">
-        <%= @project.content %>
-      </div>
-    </div>
-    <div id="carousel-<%= @project.id%>" class="carousel slide" data-bs-ride="carousel" style="width:40%;">
-      <div class="carousel-inner" style="border-radius:20px;">
-        <!-- Check if the project has attached photos -->
-        <% if @project.photos.attached? %>
-          <!-- Loop through the project photos -->
-          <% @project.photos.each_with_index do |photo, index|%>
-            <!-- If the index is one then the class has to be active. -->
-            <% if index == 0 %>
-              <div class="carousel-item active">
-                <%= cl_image_tag photo.key, height: 325, style:"border-radius:20px;", crop: :fill %>
-              </div>
-            <% else %>
-              <div class="carousel-item ">
-                <%= cl_image_tag photo.key, height: 325, style:"border-radius:20px;", crop: :fill %>
-              </div>
+      <div id="carousel-<%= @project.id%>" class="carousel slide" data-bs-ride="carousel" style="width:40%;">
+        <div class="carousel-inner" style="border-radius:20px;">
+          <!-- Check if the project has attached photos -->
+          <% if @project.photos.attached? %>
+            <!-- Loop through the project photos -->
+            <% @project.photos.each_with_index do |photo, index|%>
+              <!-- If the index is one then the class has to be active. -->
+              <% if index == 0 %>
+                <div class="carousel-item active">
+                  <%= cl_image_tag photo.key, height: 325, style:"border-radius:20px;", crop: :fill %>
+                </div>
+              <% else %>
+                <div class="carousel-item ">
+                  <%= cl_image_tag photo.key, height: 325, style:"border-radius:20px;", crop: :fill %>
+                </div>
+              <% end %>
             <% end %>
-          <% end %>
-        <%else%>
-        <!-- If the project does not have photos attached render 3 random photos -->
-          <div class="carousel-item active">
-            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80" class="d-block w-100" alt="..." style="height:325px;border-radius:20px;">
-          </div>
-          <div class="carousel-item">
-            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" class="d-block w-100" alt="..." style="height: 325px;border-radius:20px;">
-          </div>
-          <div class="carousel-item">
-            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" class="d-block w-100" alt="..." style="height: 325px;border-radius:20px;">
-          </div>
-        <%end%>
+          <%else%>
+          <!-- If the project does not have photos attached render 3 random photos -->
+            <div class="carousel-item active">
+              <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80" class="d-block w-100" alt="..." style="height:325px;border-radius:20px;">
+            </div>
+            <div class="carousel-item">
+              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" class="d-block w-100" alt="..." style="height: 325px;border-radius:20px;">
+            </div>
+            <div class="carousel-item">
+              <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" class="d-block w-100" alt="..." style="height: 325px;border-radius:20px;">
+            </div>
+          <%end%>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel-<%= @project.id%>" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel-<%= @project.id%>" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carousel-<%= @project.id%>" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carousel-<%= @project.id%>" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+      <!-- MODAL ADD USERS  -->
+      <%= render "projects/shared/add_user_modal" %>
+      <!-- MODAL ADD USERS  -->
+      <% if @project.user_id == current_user.id %>
+            <div class="project-actions">
+                <%= link_to project_path(@project), class:"btn-action", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                  <i class="fa-solid fa-trash fa-lg"></i>
+                <%end%>
+                <%= link_to edit_project_path(@project), class:"btn-action" do %>
+                  <i class="fa-solid fa-pen-to-square fa-lg"></i>
+                <%end%>
+            </div>
+          <% end %>
     </div>
-    <!-- MODAL ADD USERS  -->
-    <%= render "projects/shared/add_user_modal" %>
-    <!-- MODAL ADD USERS  -->
-    <% if @project.user_id == current_user.id %>
-          <div class="project-actions">
-              <%= link_to project_path(@project), class:"btn-action", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-                <i class="fa-solid fa-trash fa-lg"></i>
-              <%end%>
-              <%= link_to edit_project_path(@project), class:"btn-action" do %>
-                <i class="fa-solid fa-pen-to-square fa-lg"></i>
-              <%end%>
-          </div>
-        <% end %>
   </div>
-  <!-- Users Profile Pictures Carousel
-  <div class="text-center">
-    <div id="userCarouselSlidesOnly" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-      <% @users.each_with_index do |user, index| %>
-        <% if index == 0%>
-          <% if user.photo.attached? %>
-            <div class="carousel-item active col-4">
-              <%= cl_image_tag user.photo.key, class:"avatar", crop: :fill %>
-            </div>
-          <% else%>
-            <div class="carousel-item active col-4">
-              <img class="avatar" style="height:50px; width:50px;" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
-            </div>
-          <% end %>
-        <% else %>
-          <% if user.photo.attached? %>
-            <div class="carousel-item col-4">
-              <%= cl_image_tag user.photo.key, class:"avatar", crop: :fill %>
-            </div>
-          <% else%>
-            <div class="carousel-item col-4">
-              <img class="avatar" style="height:50px; width:50px;" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
-            </div>
-          <% end %>
-        <% end %>
-      <% end %>
-      </div>
-    </div>
-  </div> -->
-
-  <!-- USER AVATAR CAROUSEL -->
-  <div class="avatar-carousel">
-    <div class="wrapper">
-      <button class="prev" id="prevSlide" type="button">➤</button>
-      <div class="slider">
-        <% @users.each_with_index do |user, index| %>
-          <% if user.photo.attached? %>
-            <div class="item">
-              <%= cl_image_tag user.photo.key, class:"avatar", style:"height:50px; width:50px;", crop: :fill %>
-              <div class="title"><%= user.first_name%> <%= user.last_name%></div>
-            </div>
-          <% else%>
-            <div class="item">
-              <img class="avatar" style="height:50px; width:50px;" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
-              <div class="title"><%= user.first_name%> <%= user.last_name%></div>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-      <button class="next" id="nextSlide" type="button">➤</button>
-    </div>
-    <button type="button" style="margin-left:47%" id="add-users" class="btn" data-bs-toggle="modal" data-bs-target="#addUsersModal" data-bs-whatever="@mdo">Add Users</button></strong>
-  </div>
-  <!-- USER AVATAR CAROUSEL -->
 
 
-  <div class="board" data-controller="sortable modal">
+
+  <div class="board" data-controller="sortable modal" style="margin-top: 9%;">
     <div class="kanban-block text-center">
       <div class="board-title">
         <p><strong>Next Meeting</strong></p>

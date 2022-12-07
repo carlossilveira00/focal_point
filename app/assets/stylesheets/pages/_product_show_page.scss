@@ -8,7 +8,7 @@
   margin-right:5%;
   padding:40px;
   border-radius: 5px;
-
+  padding-top: 77px;
 }
 
 .project-actions{
@@ -17,6 +17,7 @@
   margin-left: 75%;
   padding:10px;
   text-decoration: none;
+  margin-top: -70px;
 
   .btn-action{
     color:#364B92;
@@ -237,6 +238,7 @@
 
 
 .avatar-carousel{
+  width:200%;
 
   #add-users{
     background-color: #364B92;
@@ -254,9 +256,7 @@
     overflow: hidden;
     display: flex;
     flex-direction: row;
-    margin: auto;
     align-items: center;
-    justify-content: center;
   }
   .slider {
     max-width: 45%;
@@ -306,4 +306,16 @@
     text-align: center;
   }
 
+}
+
+#toggle-btn {
+  margin-top: 59px;
+  height: 30px;
+  position: absolute;
+  margin-left: 5%;
+  border-color: white;
+  color: white;
+  background-color: #364B92;
+  padding-bottom: 2%;
+  border-radius: 10px;
 }

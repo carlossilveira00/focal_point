@@ -1,5 +1,5 @@
 <div class="text-center tasks-show">
-  <h2 style= ""><%= @project.name%> Tasks</h2>
+  <h2 style= ""><%= @project.name%> - Tasks</h2>
   <div class="board" data-controller="sortable modal">
     <div class="kanban-block d-none text-center">
       <strong>Next Meeting</strong>
@@ -72,7 +72,7 @@
             <%= f.input :title %>
             <%= f.input :description, :as => :text, :input_html => { 'rows' => 5, 'cols' => 10 } %>
             <%= f.input :priority, collection: ["Critical","High","Medium", "Low" ]  %>
-            <%= f.input :status, collection: ["To-Do", "Unassigned", "Completed", "In progress", "Next Meeting" ] %>
+            <%= f.input :status, collection: ["To-Do", "In progress", "Completed"] %>
             <%= f.input :project_id, :as => :hidden, :input_html => { :value => @project.id }%>
             <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id }%>
             <%= button_to "Create Task", project_task_create_path(@project), id:"btn-create-task"%>

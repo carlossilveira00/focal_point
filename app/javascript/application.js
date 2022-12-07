@@ -14,6 +14,7 @@ import "trix"
 import "@rails/actiontext"
 import "chartkick/chart.js"
 
+
 const toogleButton = document.getElementById("toggle-btn");
 const prevSlideButton = document.getElementById("prevSlide");
 const nextSlideButton = document.getElementById("nextSlide");

@@ -6,6 +6,12 @@
   }
 }
 
+.modal-title{
+  text-align: left;
+max-width: 100%;
+white-space: initial;
+}
+
 
 .modal{
   .tag-critical{
@@ -68,11 +74,13 @@
 }
 
 #add-users-button{
+  margin-left:40%;
   border:none;
-  width:100px;
+  width:120px;
   background: #3D54A0;
   color: white;
   align-content: center;
+  padding:10px;
   border-radius: 10px;
   box-shadow: rgba(127, 127, 127, 0.2) 1px 5px 10px 1px;
 }

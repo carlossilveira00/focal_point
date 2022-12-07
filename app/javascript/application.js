@@ -13,7 +13,6 @@ import "trix"
 import "@rails/actiontext"
 import "chartkick/chart.js"
 
-
 const prevSlideButton = document.getElementById("prevSlide");
 const nextSlideButton = document.getElementById("nextSlide");
 

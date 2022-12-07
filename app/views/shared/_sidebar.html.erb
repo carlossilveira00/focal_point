@@ -1,6 +1,6 @@
 <nav class="main-menu">
   <ul class="upper-btns">
-    <%if @project.nil?%>
+    <%if @project.nil? || @project.id.nil?%>
       <li>
         <a href="/profile">
           <i class="fa-solid fa-house"></i>

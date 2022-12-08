@@ -1,14 +1,14 @@
 <div class="row g-2 text-center d-flex justify-content-around m-5">
   <div class="tasks-status-chart col-5">
-    <h1>Tasks Status Chart</h1>
+    <h4>Tasks Status Chart</h4>
     <%= pie_chart tasks_status_project_pages_path %>
   </div>
   <div class="tasks-status-chart col-5">
-    <h1>Users Tasks Chart</h1>
+    <h4>Users Tasks Chart</h4>
     <%= pie_chart user_tasks_project_pages_path %>
   </div>
-   <div class="tasks-status-chart col-10 m-5" style="margin-left:auto;margin-right:auto;">
-    <h1>Tasks Completed By Day Of The Week</h1>
+   <div class="tasks-status-chart col-11 m-5" style="margin-left:auto;margin-right:auto;">
+    <h4>Tasks Completed By Day Of The Week</h4>
     <%= area_chart completed_tasks_by_day_project_pages_path %>
   </div>
 </div>

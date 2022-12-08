@@ -7,7 +7,8 @@
     <img class="avatar" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" style="margin-top:-3px; height:55px; width:55px">
   <% end %>
   <p style="width:120px; padding-top:10px;"><%= User.find(ticket.user_id).first_name%> <%= User.find(ticket.user_id).last_name%></p>
-  <p style="width:120px; padding-top:10px;"><%= ticket.title%></p>
+  <p style="padding-top: 10px;text-overflow: ellipsis;overflow: hidden;width: 200px;white-space: nowrap;">
+    <%= ticket.title%></p>
   <p style="width:120px; padding-top:10px"><%= ticket.status%></p>
   <a class="btn btn-ticket text-center" style="margin-top:5px" type="button" href="/projects/<%= @project.id%>/tickets/<%= ticket.id%>">See Comments</a>
 </div>

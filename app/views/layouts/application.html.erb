@@ -38,10 +38,12 @@
         <%= render "shared/footer" %>
       <%else%>
         <div>
-          <%= render "shared/project_navbar" %>
           <div class="page-container d-flex">
             <%= render "shared/sidebar" %>
-            <%= yield %>
+            <div class="content" style="width:100%;">
+              <%= render "shared/project_navbar" %>
+              <%= yield %>
+            </div>
           </div>
           <%= render "shared/footer" %>
         </div>

@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 
-.home-div{
+.home-div {
   background-color: white;
 }
 
@@ -33,7 +33,7 @@
 
   #btn-scroll-down {
     position: absolute;
-    margin-top: 6%;
+    margin-top: -1%;
     text-align: center;
     text-decoration: none;
     border-radius: 10px;
@@ -41,6 +41,7 @@
     color: #283975;
     padding: 10px;
     border: 1px solid #283975;
+    margin-left: -63px;
   }
 
   .info-details {
@@ -103,6 +104,7 @@
 .comments-space {
   padding: 60px;
   padding-bottom: 8%;
+  background: linear-gradient(7deg, #adb8dc -23%, white 55%);
 
   .list {
     padding-bottom: 15px;

@@ -1,11 +1,11 @@
 <div class="text-center tasks-show">
-  <h2 style= ""><%= @project.name%> - Tasks</h2>
+  <h2><%= @project.name%> - Tasks</h2>
   <div class="board" data-controller="sortable modal">
     <div class="kanban-block d-none text-center">
       <strong>Next Meeting</strong>
-      <div id="nextmeeting" data-sortable-target="nextmeeting" >
+      <div id="todiscuss" data-sortable-target="todiscuss" >
         <% @tasks.each do |task|%>
-          <% if task.status == "Next Meeting"%>
+          <% if task.status == "To Discuss"%>
             <a id="link" data-bs-toggle="modal" data-bs-target="#task<%=task.id%>Modal"><%= render "projects/shared/task", task: task %></a>
             <%= render "projects/shared/task_modal", task: task %>
           <% end %>

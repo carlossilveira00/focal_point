@@ -130,12 +130,12 @@
     .tag-low {
       border-radius:20px;
       font-size: 0.6em;
-      background-color: #D6ECD2;
+      background-color: #dbdbdb;
       padding: 5px 15px;
       margin-left: 15px;
 
       i{
-        color:#7BC86C;
+        color:#7c7c7c;
       }
     }
 
@@ -144,22 +144,18 @@
 
 .priority-critical{
   border:2px solid rgba(239,117,100, 0.8);
-  box-shadow: 0px 0px 20px -5px rgba(239,117,100, 0.8);
 }
 
 .priority-high{
   border:2px solid rgba(255,175,63, 0.8);
-  box-shadow: 0px 0px 20px -5px rgba(255,175,63, 0.8);
 }
 
 .priority-medium{
   border:2px solid rgba(245,221,41, 0.8);
-  box-shadow: 0px 0px 20px -5px rgba(245,221,41, 0.8);
 }
 
 .priority-low{
-  border:2px solid rgba(123,200,108, 0.8);
-  box-shadow: 0px 0px 20px -5px rgba(123,200,108, 0.8);
+  border:2px solid #dbdbdb;
 }
 
 .task{

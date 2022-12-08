@@ -13,14 +13,14 @@
         </button>
       </div>
       <div class="users-info">
-        <h3> Hello <%= current_user.first_name %>! </h3>
+        <h3 style="text-align:left;">Hello <%= current_user.first_name %>! </h3>
         <p> <%= current_user.email %> </p>
       </div>
     </div>
     <div class="user-record text-center">
-      <p class="text-center">Your info:</p>
+      <p class="text-center" style="color:gray">Your info:</p>
       <div class="my-info text-center">
-        <p> <%= current_user.information %> </p>
+        <p style="text-align:start;"> <%= current_user.information %> </p>
       </div>
       <a class="btn text-center" type="button" href="/users/edit">Update Profile</a>
     </div>
@@ -78,10 +78,12 @@
               <div class="modal-body">
                 <% @invitations.each do |invitation|%>
                   <% project = Project.find(invitation.project_id)%>
-                  <div style="display:flex;justify-content: space-between;">
+                  <div style="display:flex;">
                     <p><strong><%= User.find(project.user_id).first_name%> <%= User.find(project.user_id).last_name%></strong> invited you to: <%= Project.find(invitation.project_id).name%><p>
+                    <div style="display:flex;margin-left:auto;">
                     <%= button_to "Accept", project_user_project_accept_path(invitation.project_id, invitation),id:"accept-button", method: :patch %>
                     <%= button_to "Decline", project_user_project_decline_path(invitation.project_id, invitation),id:"decline-button", method: :patch %>
+                    </div>
                   </div>
                 <%end%>
               </div>
